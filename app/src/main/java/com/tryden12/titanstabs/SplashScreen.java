@@ -13,7 +13,7 @@ public class SplashScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         new Handler().postDelayed(() -> {
-            startActivity(new Intent(SplashScreen.this, CreateUserActivity.class));
+            startActivity(new Intent(SplashScreen.this, LoginActivity.class));
             finish();
         }, 2000);
     }
