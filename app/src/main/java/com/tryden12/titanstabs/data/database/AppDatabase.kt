@@ -1,10 +1,11 @@
-package com.tryden12.caddyapp.database
+package com.tryden12.titanstabs.data.database
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-
+import com.tryden12.titanstabs.data.model.User
+import com.tryden12.titanstabs.data.model.UserDao
 
 
 @Database(entities = [User::class], version = 2)

@@ -1,4 +1,4 @@
-package com.tryden12.caddyapp.database
+package com.tryden12.titanstabs.data.model
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
