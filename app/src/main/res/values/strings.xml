@@ -2,7 +2,6 @@
     <string name="app_name">TitansTabs</string>
 
 
-
     <!-- Login Activity -->
     <string name="email">Email</string>
     <string name="password">Password</string>
@@ -28,4 +27,6 @@
     <string name="phone_num_length">Phone number must be 10 digits long!</string>
     <string name="email_character">Email must contain "@"</string>
     <string name="email_taken">Sorry, this email is already registered.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
