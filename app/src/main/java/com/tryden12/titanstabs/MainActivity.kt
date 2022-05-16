@@ -2,6 +2,7 @@ package com.tryden12.titanstabs
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import com.tryden12.titanstabs.databinding.ActivityMainBinding
@@ -22,10 +23,17 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        if(toggle.onOptionsItemSelected(item)) {
+            return true
+        }
+
+        return super.onOptionsItemSelected(item)
+    }
 
 
-
-    fun toggleMenu() {
+    private fun toggleMenu() {
         /***************** Toggle Menu ****************************************************/
         toggle = ActionBarDrawerToggle(this, binding.drawerLayout, R.string.open, R.string.close)
         binding.drawerLayout.addDrawerListener(toggle)
