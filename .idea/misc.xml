@@ -5,9 +5,13 @@
       <map>
         <entry key="app/src/main/res/drawable-v24/button_bg_main.xml" value="0.197" />
         <entry key="app/src/main/res/drawable-v24/button_bg_secondary.xml" value="0.197" />
+        <entry key="app/src/main/res/drawable-v24/card_bg.xml" value="0.191" />
         <entry key="app/src/main/res/drawable-v24/edit_text_bg.xml" value="0.197" />
         <entry key="app/src/main/res/drawable-v24/ic_baseline_email_24.xml" value="0.197" />
+        <entry key="app/src/main/res/drawable-v24/ic_search.xml" value="0.191" />
         <entry key="app/src/main/res/drawable-v24/login_screen_white_bg.xml" value="0.197" />
+        <entry key="app/src/main/res/drawable-v24/recycler_bg.xml" value="0.191" />
+        <entry key="app/src/main/res/drawable-v24/shape_edittext.xml" value="0.191" />
         <entry key="app/src/main/res/drawable/bg_splash_screen.xml" value="0.197" />
         <entry key="app/src/main/res/drawable/custom_menu_item.xml" value="0.1065" />
         <entry key="app/src/main/res/layout/activity_create_user.xml" value="0.25" />
@@ -17,6 +21,7 @@
         <entry key="app/src/main/res/layout/fragment_main.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/nav_header.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/search_results_fragment.xml" value="0.37604166666666666" />
+        <entry key="app/src/main/res/layout/shape_edittext.xml" value="0.24166666666666667" />
         <entry key="app/src/main/res/layout/test_fragment.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/menu/nav_header_menu.xml" value="0.37604166666666666" />
       </map>
