@@ -28,6 +28,9 @@
     <style name="MyActionBar" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
         <item name="background">@color/dark_blue</item>
         <item name="titleTextStyle">@style/MyActionBarTitle</item>
+        <item name="android:icon">@drawable/action_bar_logo</item>
+        <item name="logo">@drawable/action_bar_logo</item>
+        <item name="displayOptions">useLogo|showHome|showTitle</item>
     </style>
 
 
