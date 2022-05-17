@@ -16,7 +16,7 @@
 
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/view_fullscreen_btn"
+            android:id="@+id/back_btn"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="108dp"
@@ -54,11 +54,11 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view_fullscreen_btn" />
+            app:layout_constraintTop_toBottomOf="@+id/back_btn" />
 
 
         <TextView
-            android:id="@+id/heading1"
+            android:id="@+id/textview_player_heading"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
@@ -73,7 +73,7 @@
 
 
         <View
-            android:id="@+id/view_fullscreen"
+            android:id="@+id/view_player_details"
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:layout_marginStart="12dp"
@@ -83,10 +83,10 @@
             android:elevation="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/heading1" />
+            app:layout_constraintTop_toBottomOf="@+id/textview_player_heading" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/textView_name_json"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
@@ -96,12 +96,12 @@
             android:textSize="20sp"
             android:elevation="12dp"
             android:textColor="@color/dark_blue"
-            app:layout_constraintStart_toStartOf="@+id/view_fullscreen"
-            app:layout_constraintTop_toTopOf="@+id/view_fullscreen" />
+            app:layout_constraintStart_toStartOf="@+id/view_player_details"
+            app:layout_constraintTop_toTopOf="@+id/view_player_details" />
 
 
         <View
-            android:id="@+id/view_popup"
+            android:id="@+id/view_player_description"
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:layout_marginStart="12dp"
@@ -111,7 +111,7 @@
             android:elevation="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view_fullscreen" />
+            app:layout_constraintTop_toBottomOf="@+id/view_player_details" />
 
         <TextView
             android:id="@+id/textView4"
@@ -124,8 +124,8 @@
             android:textColor="@color/dark_blue"
             android:elevation="12dp"
             android:textSize="20sp"
-            app:layout_constraintStart_toStartOf="@+id/view_popup"
-            app:layout_constraintTop_toTopOf="@+id/view_popup" />
+            app:layout_constraintStart_toStartOf="@+id/view_player_description"
+            app:layout_constraintTop_toTopOf="@+id/view_player_description" />
 
         <EditText
             android:id="@+id/search_editText"
@@ -150,7 +150,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view_popup" />
+            app:layout_constraintTop_toBottomOf="@+id/view_player_description" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/search_button"

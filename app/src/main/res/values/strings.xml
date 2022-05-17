@@ -37,14 +37,15 @@
 
 
     <!-- Search Results Fragment -->
-    <string name="description">Description: </string>
-    <string name="name">Name: </string>
-    <string name="position">Position: </string>
-    <string name="born">Born: </string>
+    <string name="player">PLAYER</string>
+    <string name="description">Description:</string>
+    <string name="name">Name</string>
+    <string name="position">Position:</string>
+    <string name="born">Born:</string>
     <string name="image">Image</string>
-    <string name="height">Height: </string>
-    <string name="weight">Weight: </string>
-
+    <string name="height">Height:</string>
+    <string name="weight">Weight:</string>
+    <string name="back">Back</string>
 
 
 
