@@ -17,4 +17,21 @@ class Player {
     @SerializedName("strThumb")
     var image: String? = null
 
+    @Expose
+    @SerializedName("dateBorn")
+    var born: String? = null
+
+    @Expose
+    @SerializedName("strHeight")
+    var height: String? = null
+
+    @Expose
+    @SerializedName("strWeight")
+    var weight: String? = null
+
+    @Expose
+    @SerializedName("strDescriptionEN")
+    var description: String? = null
+
+
 }
