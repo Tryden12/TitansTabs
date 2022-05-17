@@ -5,19 +5,23 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import com.tryden12.titanstabs.R
 import com.tryden12.titanstabs.databinding.FragmentMainBinding
 import com.tryden12.titanstabs.ui.main.viewmodel.ViewModel
 
 
-class MainFragment : Fragment() {
+class MainFragment : Fragment(), View.OnClickListener {
 
 
     companion object {
         fun newInstance() = MainFragment()
     }
 
+    var navController : NavController? = null
     private lateinit var viewModel: ViewModel
     private lateinit var binding: FragmentMainBinding
 
@@ -37,5 +41,18 @@ class MainFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(ViewModel::class.java)
         // TODO: Use the ViewModel
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        navController = Navigation.findNavController(view)
+        view.findViewById<Button>(R.id.search_button).setOnClickListener(this)
+    }
+
+    override fun onClick(v: View?) {
+        when (v!!.id) {
+            R.id.search_button -> navController!!.navigate((R.id.action_mainFragment_to_searchResultsFragment2))
+        }
     }
 }
