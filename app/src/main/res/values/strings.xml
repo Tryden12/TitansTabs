@@ -36,6 +36,16 @@
     <string name="close">Close</string>
 
 
+    <!-- Search Results Fragment -->
+    <string name="description">Description: </string>
+    <string name="name">Name: </string>
+    <string name="position">Position: </string>
+    <string name="born">Born: </string>
+    <string name="image">Image</string>
+    <string name="height">Height: </string>
+    <string name="weight">Weight: </string>
+
+
 
 
 </resources>

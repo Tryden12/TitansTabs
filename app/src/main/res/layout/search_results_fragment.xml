@@ -1,13 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.main.SearchResultsFragment">
+    tools:context=".ui.main.SearchResultsFragment"
+    android:background="@color/grey"
+    android:id="@+id/parentLayout">
 
-    <TextView
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello" />
+        android:layout_height="match_parent">
 
-</FrameLayout>
+
+        <TextView
+            android:id="@+id/heading1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="25dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Heading"
+            android:textAllCaps="true"
+            android:textColor="@color/dark_blue"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <View
+            android:id="@+id/view_fullscreen"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/card_bg"
+            android:elevation="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/heading1" />
+
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="148dp"
+            android:elevation="12dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Fill"
+            android:textColor="@color/dark_blue"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/view_fullscreen"
+            app:layout_constraintTop_toTopOf="@+id/view_fullscreen" />
+
+        <View
+            android:id="@+id/view_popup"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/card_bg"
+            android:elevation="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_fullscreen" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="16dp"
+            android:elevation="12dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Fill"
+            android:textColor="@color/dark_blue"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/view_popup"
+            app:layout_constraintTop_toTopOf="@+id/view_popup" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/view_fullscreen_btn"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="108dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="108dp"
+            android:layout_marginBottom="50dp"
+            android:background="@drawable/button_bg_secondary"
+            android:fontFamily="@font/roboto_bold"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:text="Fill"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_popup" />
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
