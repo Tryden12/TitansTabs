@@ -3,7 +3,7 @@ package com.tryden12.titanstabs.data.manualParsing
 import com.google.gson.Gson
 import com.google.gson.JsonArray
 import com.tryden12.titanstabs.data.api.ApiService
-import com.tryden12.titanstabs.data.model.Player
+
 import com.tryden12.titanstabs.data.model.Players
 import org.json.JSONArray
 import org.json.JSONObject
@@ -15,7 +15,8 @@ import java.net.URLConnection
 class ManualParsingImpl : ApiService{
     override suspend fun getPlayers(): Players {
 
-        val url = URL("https://www.thesportsdb.com/api/v1/json/50130162/searchplayers.php?t=Tennessee%Titans")
+        //val url = URL("https://www.thesportsdb.com/api/v1/json/50130162/searchplayers.php?t=Tennessee%Titans")
+        val url = URL("https://my-json-server.typicode.com/Tryden12/mockjson/db")
         val connection : URLConnection = url.openConnection()
         connection.connect()
 
@@ -45,6 +46,7 @@ class ManualParsingImpl : ApiService{
         val playerBorn : String = jsonObjectPlayer.getString("dateBorn")
         val playerImage : String = jsonObjectPlayer.getString("strThumb")
         val playerDesc : String = jsonObjectPlayer.getString("strDescriptionEN")
+
         return Players(listOf(
             Player(
                 playerName, playerPosition, playerHeight, playerWeight, playerBorn, playerDesc,playerImage

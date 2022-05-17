@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import com.tryden12.titanstabs.R
 import com.tryden12.titanstabs.data.model.Player
-import com.tryden12.titanstabs.data.model.Players
 
 class Adapter(private val context: Context?, private var playerList: List<Player>?) :
     RecyclerView.Adapter<Adapter.CustomViewHolder>() {
@@ -28,11 +27,11 @@ class Adapter(private val context: Context?, private var playerList: List<Player
 
     override fun onBindViewHolder(customViewHolder: CustomViewHolder, pos: Int) {
         val player = playerList!![pos]
-        customViewHolder.name.text = player.name.toString()
-        customViewHolder.position.text = player.position.toString()
+        customViewHolder.name.text = player.strPlayer.toString()
+        customViewHolder.position.text = player.strPosition.toString()
         //customViewHolder.image.text = textWithImage.imageSrc.toString()
 
-         Picasso.get().load(player.image).into(customViewHolder.image)
+         Picasso.get().load(player.strThumb).into(customViewHolder.image)
 
 
     }
