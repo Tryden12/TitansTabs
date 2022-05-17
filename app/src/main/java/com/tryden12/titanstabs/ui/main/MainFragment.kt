@@ -39,7 +39,7 @@ class MainFragment : Fragment(), View.OnClickListener {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(ViewModel::class.java)
+        viewModel = ViewModelProvider(this)[ViewModel::class.java]
         // TODO: Use the ViewModel
     }
 
