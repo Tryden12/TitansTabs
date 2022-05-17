@@ -1,0 +1,12 @@
+Api Key: 50130162
+Titans id: 134929
+
+
+URL for Titans info as a franchise
+https://www.thesportsdb.com/api/v1/json/50130162/searchteams.php?t=Tennessee%Titans
+
+URL for all Titans players:
+https://www.thesportsdb.com/api/v1/json/50130162/searchplayers.php?t=Tennessee%Titans
+
+URL for a specific Titans player: (example)
+https://www.thesportsdb.com/api/v1/json/50130162/searchplayers.php?t=Tennessee%Titans&p=Ben%Jones
