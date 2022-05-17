@@ -35,6 +35,7 @@
     <string name="open">Open</string>
     <string name="close">Close</string>
     <string name="search">Search</string>
+    <string name="search_hint">Search..</string>
 
 
     <!-- Search Results Fragment -->
