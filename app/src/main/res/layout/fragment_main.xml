@@ -174,13 +174,27 @@
             android:layout_width="0dp"
             android:layout_height="200dp"
             android:layout_marginStart="12dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="76dp"
             android:layout_marginEnd="12dp"
             android:background="@drawable/recycler_bg"
             android:elevation="10dp"
             android:padding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_testing_json" />
+
+        <TextView
+            android:id="@+id/textView_testing_json"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="36dp"
+            android:layout_marginEnd="8dp"
+            android:text="Testing JSON"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/search_button" />
 

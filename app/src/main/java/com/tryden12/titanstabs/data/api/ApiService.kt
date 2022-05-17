@@ -8,6 +8,6 @@ import retrofit2.http.GET
 interface ApiService {
 
     @GET
-    fun getPlayers() : Players
+    suspend fun getPlayers() : Players
 
 }

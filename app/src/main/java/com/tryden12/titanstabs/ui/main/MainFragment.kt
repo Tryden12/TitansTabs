@@ -39,8 +39,14 @@ class MainFragment : Fragment(), View.OnClickListener {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+
         viewModel = ViewModelProvider(this)[ViewModel::class.java]
-        // TODO: Use the ViewModel
+
+        viewModel.playerLiveData.observe(viewLifecycleOwner) {
+            binding.textViewTestingJson.text = it.name
+        }
+
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -48,6 +54,7 @@ class MainFragment : Fragment(), View.OnClickListener {
 
         navController = Navigation.findNavController(view)
         view.findViewById<Button>(R.id.search_button).setOnClickListener(this)
+
     }
 
     override fun onClick(v: View?) {
