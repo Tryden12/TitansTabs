@@ -17,7 +17,7 @@ class ViewModel : ViewModel() {
 
     val playerLiveData = MutableLiveData<Player>()
 
-
+/*
     fun fetchPlayer() {
         viewModelScope.launch {
             val player : Player = withContext(Dispatchers.IO) {
@@ -26,4 +26,8 @@ class ViewModel : ViewModel() {
             playerLiveData.value = player
         }
     }
+
+ */
+
+
 }

@@ -1,64 +1,64 @@
 package com.tryden12.titanstabs.data.model
 
-data class Player(
-    val dateBorn: String,
-    val dateSigned: String,
-    val idAPIfootball: Any,
-    val idPlayer: String,
-    val idPlayerManager: Any,
-    val idSoccerXML: Any,
-    val idTeam: String,
-    val idTeam2: String,
-    val idTeamNational: Any,
-    val intLoved: String,
-    val intSoccerXMLTeamID: Any,
-    val strAgent: String,
-    val strBanner: Any,
-    val strBirthLocation: String,
-    val strCollege: Any,
-    val strCreativeCommons: String,
-    val strCutout: String,
-    val strDescriptionCN: Any,
-    val strDescriptionDE: Any,
-    val strDescriptionEN: String,
-    val strDescriptionES: Any,
-    val strDescriptionFR: Any,
-    val strDescriptionHU: Any,
-    val strDescriptionIL: Any,
-    val strDescriptionIT: Any,
-    val strDescriptionJP: Any,
-    val strDescriptionNL: Any,
-    val strDescriptionNO: Any,
-    val strDescriptionPL: Any,
-    val strDescriptionPT: Any,
-    val strDescriptionRU: Any,
-    val strDescriptionSE: Any,
-    val strFacebook: String,
-    val strFanart1: Any,
-    val strFanart2: Any,
-    val strFanart3: Any,
-    val strFanart4: Any,
-    val strGender: String,
-    val strHeight: String,
-    val strInstagram: String,
-    val strKit: String,
-    val strLocked: String,
-    val strNationality: String,
-    val strNumber: String,
-    val strOutfitter: String,
-    val strPlayer: String,
-    val strPlayerAlternate: Any,
-    val strPosition: String = "",
-    val strRender: String,
-    val strSide: String,
-    val strSigning: String,
-    val strSport: String,
-    val strTeam: String,
-    val strTeam2: String,
-    val strThumb: String,
-    val strTwitter: String,
-    val strWage: String,
-    val strWebsite: String,
-    val strWeight: String,
-    val strYoutube: String
-)
+class Player {
+    val dateBorn: String? = null
+    val dateSigned: String? = null
+    val idAPIfootball: String? = null
+    val idPlayer: String? = null
+    val idPlayerManager: String? = null
+    val idSoccerXML: String? = null
+    val idTeam: String? = null
+    val idTeam2: String? = null
+    val idTeamNational: String? = null
+    val intLoved: String? = null
+    val intSoccerXMLTeamID: String? = null
+    val strAgent: String? = null
+    val strBanner: String? = null
+    val strBirthLocation: String? = null
+    val strCollege: String? = null
+    val strCreativeCommons: String? = null
+    val strCutout: String? = null
+    val strDescriptionCN: String? = null
+    val strDescriptionDE: String? = null
+    val strDescriptionEN: String? = null
+    val strDescriptionES: String? = null
+    val strDescriptionFR: String? = null
+    val strDescriptionHU: String? = null
+    val strDescriptionIL: String? = null
+    val strDescriptionIT: String? = null
+    val strDescriptionJP: String? = null
+    val strDescriptionNL: String? = null
+    val strDescriptionNO: String? = null
+    val strDescriptionPL: String? = null
+    val strDescriptionPT: String? = null
+    val strDescriptionRU: String? = null
+    val strDescriptionSE: String? = null
+    val strFacebook: String? = null
+    val strFanart1: String? = null
+    val strFanart2: String? = null
+    val strFanart3: String? = null
+    val strFanart4: String? = null
+    val strGender: String? = null
+    val strHeight: String? = null
+    val strInstagram: String? = null
+    val strKit: String? = null
+    val strLocked: String? = null
+    val strNationality: String? = null
+    val strNumber: String? = null
+    val strOutfitter: String? = null
+    var strPlayer: String? = null
+    val strPlayerAlternate: String? = null
+    var strPosition: String? = null
+    val strRender: String? = null
+    val strSide: String? = null
+    val strSigning: String? = null
+    val strSport: String? = null
+    val strTeam: String? = null
+    val strTeam2: String? = null
+    var strThumb: String? = null
+    val strTwitter: String? = null
+    val strWage: String? = null
+    val strWebsite: String? = null
+    val strWeight: String? = null
+    val strYoutube: String? = null
+}
