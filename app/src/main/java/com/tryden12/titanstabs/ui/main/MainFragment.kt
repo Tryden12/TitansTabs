@@ -43,7 +43,7 @@ class MainFragment : Fragment(), View.OnClickListener {
         viewModel = ViewModelProvider(this)[ViewModel::class.java]
 
         viewModel.playerLiveData.observe(viewLifecycleOwner) {
-            binding.textViewTestingJson.text = it.strPlayer
+            //binding.textViewTestingJson.text = it.strPlayer
         }
 
 
