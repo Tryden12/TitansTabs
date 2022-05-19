@@ -11,21 +11,29 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import androidx.recyclerview.widget.DefaultItemAnimator
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.tryden12.titanstabs.R
+import com.tryden12.titanstabs.data.model.Player
+import com.tryden12.titanstabs.data.model.Players
 import com.tryden12.titanstabs.databinding.FragmentMainBinding
+import com.tryden12.titanstabs.ui.main.adapter.Adapter
 import com.tryden12.titanstabs.ui.main.viewmodel.ViewModel
 
 
 class MainFragment : Fragment(), View.OnClickListener {
 
-
     companion object {
         fun newInstance() = MainFragment()
     }
 
+    private lateinit var binding: FragmentMainBinding
+
     var navController : NavController? = null
     private lateinit var viewModel: ViewModel
-    private lateinit var binding: FragmentMainBinding
+    lateinit var adapter : Adapter
+    var playerModelArrayList: MutableList<Player>? = ArrayList()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -50,6 +58,18 @@ class MainFragment : Fragment(), View.OnClickListener {
         viewModel.playerLiveData.observe(viewLifecycleOwner) {
             //binding.textViewTestingJson.text = it.strPlayer
         }
+
+
+        // Setup Layout Manager
+        val layoutManager = LinearLayoutManager(context)
+        binding.myRecyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        binding.myRecyclerView!!.itemAnimator = DefaultItemAnimator()
+        binding.myRecyclerView.adapter = Adapter(context, playerModelArrayList)
+        // Add divider
+        val divider = DividerItemDecoration(
+            context, layoutManager.orientation
+        )
+        binding.myRecyclerView.addItemDecoration(divider)
 
     }
 
