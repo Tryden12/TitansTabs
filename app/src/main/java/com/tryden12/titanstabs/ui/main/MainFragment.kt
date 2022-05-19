@@ -1,11 +1,13 @@
 package com.tryden12.titanstabs.ui.main
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.activity.OnBackPressedCallback
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
@@ -31,7 +33,6 @@ class MainFragment : Fragment(), View.OnClickListener {
     ): View? {
         // Inflate the layout for this fragment
         //return inflater.inflate(R.layout.fragment_main, container, false)
-
        binding = FragmentMainBinding.inflate(layoutInflater)
        return binding.root
     }
@@ -40,12 +41,15 @@ class MainFragment : Fragment(), View.OnClickListener {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
+        // Disable back button
+        disableOnBackPressed()
+
+
         viewModel = ViewModelProvider(this)[ViewModel::class.java]
 
         viewModel.playerLiveData.observe(viewLifecycleOwner) {
             //binding.textViewTestingJson.text = it.strPlayer
         }
-
 
     }
 
@@ -61,5 +65,19 @@ class MainFragment : Fragment(), View.OnClickListener {
         when (v!!.id) {
             R.id.search_button -> navController!!.navigate((R.id.action_mainFragment_to_searchResultsFragment2))
         }
+    }
+
+    fun disableOnBackPressed() {
+
+        val callback: OnBackPressedCallback =
+            object : OnBackPressedCallback(true /* enabled by default */) {
+                override fun handleOnBackPressed() {
+                    // Handle the back button even
+                    Log.d("BACKBUTTON", "Back button clicks")
+                }
+            }
+
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)
+
     }
 }
