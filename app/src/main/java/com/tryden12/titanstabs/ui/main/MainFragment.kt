@@ -80,8 +80,7 @@ class MainFragment : Fragment(), View.OnClickListener {
         )
         binding.myRecyclerView.addItemDecoration(divider)
 
-        retrievePlayerData()
-
+        //retrievePlayerDataTest()
 
 
     }
@@ -117,8 +116,8 @@ class MainFragment : Fragment(), View.OnClickListener {
     }
 
 
-
-     fun retrievePlayerData() {
+/*
+     fun retrievePlayerDataTest() {
         try {
             // Create coroutine for download job
             val downloadJob = CoroutineScope(Dispatchers.IO).launch {
@@ -187,5 +186,7 @@ class MainFragment : Fragment(), View.OnClickListener {
         }
     }
 
+
+ */
 
 }
