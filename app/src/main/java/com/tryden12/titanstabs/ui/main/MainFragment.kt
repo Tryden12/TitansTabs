@@ -116,6 +116,19 @@ class MainFragment : Fragment(), View.OnClickListener {
     }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*
      fun retrievePlayerDataTest() {
         try {
