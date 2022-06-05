@@ -5,7 +5,15 @@ data class Players (
 )
 
 data class Player(
+    var strPlayer: String,
+    var strPosition: String,
+    val strHeight: String,
+    val strWeight: String,
     val dateBorn: String,
+    val strDescriptionEN: String,
+    var strThumb: String,
+
+/*
     val dateSigned: String,
     val idAPIfootball: String,
     val idPlayer: String,
@@ -24,7 +32,6 @@ data class Player(
     val strCutout: String,
     val strDescriptionCN: String,
     val strDescriptionDE: String,
-    val strDescriptionEN: String,
     val strDescriptionES: String,
     val strDescriptionFR: String,
     val strDescriptionHU: String,
@@ -43,28 +50,25 @@ data class Player(
     val strFanart3: String,
     val strFanart4: String,
     val strGender: String,
-    val strHeight: String,
     val strInstagram: String,
     val strKit: String,
     val strLocked: String,
     val strNationality: String,
     val strNumber: String,
     val strOutfitter: String,
-    var strPlayer: String,
     val strPlayerAlternate: String,
-    var strPosition: String,
     val strRender: String,
     val strSide: String,
     val strSigning: String,
     val strSport: String,
     val strTeam: String,
     val strTeam2: String,
-    var strThumb: String,
     val strTwitter: String,
     val strWage: String,
     val strWebsite: String,
-    val strWeight: String,
     val strYoutube: String
+ */
+
 )
 
 

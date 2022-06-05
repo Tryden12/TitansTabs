@@ -1,8 +1,8 @@
 package com.tryden12.titanstabs.data.manualParsing
 
 import com.google.gson.Gson
-import com.google.gson.JsonArray
-import com.tryden12.titanstabs.data.api.ApiService
+import com.tryden12.titanstabs.data.api.PlayersApi
+import com.tryden12.titanstabs.data.model.Player
 
 import com.tryden12.titanstabs.data.model.Players
 import org.json.JSONArray
@@ -12,11 +12,12 @@ import java.io.BufferedReader
 import java.net.URL
 import java.net.URLConnection
 
-class ManualParsingImpl : ApiService{
+class ManualParsingImpl : PlayersApi{
     override suspend fun getPlayers(): Players {
 
-        //val url = URL("https://www.thesportsdb.com/api/v1/json/50130162/searchplayers.php?t=Tennessee%Titans")
-        val url = URL("https://my-json-server.typicode.com/Tryden12/mockjson/db")
+        val url = URL("https://www.thesportsdb.com/api/v1/json/50130162/searchplayers.php?t=Tennessee%Titans")
+        /*
+        //val url = URL("https://my-json-server.typicode.com/Tryden12/mockjson/db")
         val connection : URLConnection = url.openConnection()
         connection.connect()
 
@@ -34,7 +35,7 @@ class ManualParsingImpl : ApiService{
 
         return Gson().fromJson(fullJson, Players::class.java)
 
-        /* // Json parsing test
+         // Json parsing test
         val jsonObjectPlayers = JSONObject(fullJson)
         val jsonArray : JSONArray = jsonObjectPlayers.getJSONArray("player")
         val jsonObjectPlayer : JSONObject = jsonArray.getJSONObject(0)
@@ -52,6 +53,15 @@ class ManualParsingImpl : ApiService{
                 playerName, playerPosition, playerHeight, playerWeight, playerBorn, playerDesc,playerImage
             )
         ))
-        */
+
+         */
+
+        return Players(listOf(
+            Player(
+                "Tyler Ryden", "RB", "5'7","150lbs",
+                "03/22/1993", "This is a test desc", ""
+            )
+        ))
+
     }
 }
