@@ -1,5 +1,9 @@
 package com.tryden12.titanstabs.data.model
 
+
+
+
+/*
 class Player {
     val dateBorn: String? = null
     val dateSigned: String? = null
@@ -62,3 +66,4 @@ class Player {
     val strWeight: String? = null
     val strYoutube: String? = null
 }
+ */
