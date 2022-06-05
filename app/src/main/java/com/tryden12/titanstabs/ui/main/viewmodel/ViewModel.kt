@@ -11,13 +11,14 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class ViewModel : ViewModel() {
+
     // Test ViewModel with text below
     val textHello = "Some text from ViewModel"
 
     private val dataRepository = DataRepository(ManualParsingImpl())
 
 
-    suspend fun fetchPlayer() : Player {
+    fun fetchPlayer() : Player {
         return dataRepository.getPlayers().player[0]
         /*
         viewModelScope.launch {
@@ -35,7 +36,7 @@ class ViewModel : ViewModel() {
 
 
     //private val dataRepository = DataRepository(RetrofitInstance.service)
-    //val playerLiveData = MutableLiveData<Player>()
+    val playerLiveData = MutableLiveData<Player>()
 
 
 }

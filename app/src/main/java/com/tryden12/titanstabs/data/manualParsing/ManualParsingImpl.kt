@@ -13,7 +13,7 @@ import java.net.URL
 import java.net.URLConnection
 
 class ManualParsingImpl : PlayersApi{
-    override suspend fun getPlayers(): Players {
+    override fun getPlayers(): Players {
 
         val url = URL("https://www.thesportsdb.com/api/v1/json/50130162/searchplayers.php?t=Tennessee%Titans")
         /*

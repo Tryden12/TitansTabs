@@ -5,7 +5,7 @@ import com.tryden12.titanstabs.data.model.Players
 
 class DataRepository(private val playersApi: ManualParsingImpl) {
 
-    suspend fun getPlayers() : Players {
+    fun getPlayers() : Players {
         return playersApi.getPlayers()
     }
 

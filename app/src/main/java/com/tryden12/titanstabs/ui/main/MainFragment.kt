@@ -65,6 +65,8 @@ class MainFragment : Fragment(), View.OnClickListener {
 
         viewModel = ViewModelProvider(this)[ViewModel::class.java]
 
+        binding.textviewHeadingSearchPlayer.text = viewModel.fetchPlayer().strPlayer
+
         viewModel.playerLiveData.observe(viewLifecycleOwner) {
             //binding.textViewTestingJson.text = it.strPlayer
         }
