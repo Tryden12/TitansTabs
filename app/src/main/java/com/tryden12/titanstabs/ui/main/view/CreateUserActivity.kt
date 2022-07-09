@@ -1,22 +1,22 @@
-package com.tryden12.titanstabs
+package com.tryden12.titanstabs.ui.main.view
 
 import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import android.text.method.PasswordTransformationMethod
 import android.view.View
 import android.view.WindowManager
-import android.widget.Toast
 import androidx.core.view.isVisible
+import com.tryden12.titanstabs.R
 import com.tryden12.titanstabs.data.database.AppDatabase
 import com.tryden12.titanstabs.data.model.User
 import com.tryden12.titanstabs.databinding.ActivityCreateUserBinding
 import kotlinx.coroutines.*
 
 class CreateUserActivity : AppCompatActivity() {
+
+
 
     private lateinit var binding: ActivityCreateUserBinding
     private var email : String = ""
@@ -25,6 +25,9 @@ class CreateUserActivity : AppCompatActivity() {
     private var userID : Long = -1
 
     private val users = mutableListOf<User>()
+
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,7 +47,7 @@ class CreateUserActivity : AppCompatActivity() {
 
 
 
-    /*** Method for Testing ***********************************/
+    /*** Method for Testing **/
     fun toMainActivity() {
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
@@ -52,7 +55,7 @@ class CreateUserActivity : AppCompatActivity() {
 
 
 
-    /********* Add User Method ********************************************************************/
+    /*** Add User Method **/
     private fun addUser() {
         // Bind edittext to variable
         email               = binding.editTextEmail.text.toString().trim()
@@ -83,7 +86,7 @@ class CreateUserActivity : AppCompatActivity() {
 
 
 
-            /*** Coroutine for Adding User ********************************************************/
+            /*** Coroutine for Adding User **/
             CoroutineScope(Dispatchers.IO).launch {
                 val userDao = AppDatabase.getDatabase(applicationContext).userDao()
 

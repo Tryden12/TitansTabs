@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:id="@+id/drawerLayout"
     android:background="@color/grey"
-    tools:context=".MainActivity">
+    tools:context=".ui.main.view.MainActivity">
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navView"

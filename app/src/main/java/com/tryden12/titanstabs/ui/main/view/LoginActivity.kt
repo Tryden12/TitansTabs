@@ -1,16 +1,14 @@
-package com.tryden12.titanstabs
+package com.tryden12.titanstabs.ui.main.view
 
 import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import android.text.method.PasswordTransformationMethod
 import android.view.View
 import android.view.WindowManager
-import android.widget.Toast
 import androidx.core.view.isVisible
+import com.tryden12.titanstabs.R
 import com.tryden12.titanstabs.data.database.AppDatabase
 import com.tryden12.titanstabs.databinding.ActivityLoginBinding
 import kotlinx.coroutines.*

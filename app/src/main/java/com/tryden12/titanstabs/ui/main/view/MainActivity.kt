@@ -1,10 +1,11 @@
-package com.tryden12.titanstabs
+package com.tryden12.titanstabs.ui.main.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
+import com.tryden12.titanstabs.R
 import com.tryden12.titanstabs.databinding.ActivityMainBinding
 
 

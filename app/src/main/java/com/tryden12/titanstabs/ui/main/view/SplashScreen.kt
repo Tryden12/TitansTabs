@@ -1,4 +1,4 @@
-package com.tryden12.titanstabs
+package com.tryden12.titanstabs.ui.main.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,7 +7,6 @@ import android.graphics.Color
 import android.os.Handler
 import android.view.View
 import android.view.WindowManager
-import com.tryden12.titanstabs.LoginActivity
 
 class SplashScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

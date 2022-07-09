@@ -1,4 +1,4 @@
-package com.tryden12.titanstabs.ui.main
+package com.tryden12.titanstabs.ui.main.view
 
 import android.os.Bundle
 import android.util.Log
@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -15,21 +14,12 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.gson.Gson
 import com.tryden12.titanstabs.R
 import com.tryden12.titanstabs.data.model.Player
-import com.tryden12.titanstabs.data.model.Players
 import com.tryden12.titanstabs.databinding.FragmentMainBinding
 import com.tryden12.titanstabs.ui.main.adapter.Adapter
 import com.tryden12.titanstabs.ui.main.viewmodel.ViewModel
 import kotlinx.coroutines.*
-import org.json.JSONArray
-import org.json.JSONException
-import org.json.JSONObject
-import java.io.BufferedInputStream
-import java.io.BufferedReader
-import java.net.URL
-import java.net.URLConnection
 
 
 class MainFragment : Fragment(), View.OnClickListener {

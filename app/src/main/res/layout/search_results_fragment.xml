@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.main.SearchResultsFragment"
+    tools:context=".ui.main.view.SearchResultsFragment"
     android:background="@color/grey"
     android:id="@+id/parentLayout">
 

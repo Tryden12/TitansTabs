@@ -1,4 +1,4 @@
-package com.tryden12.titanstabs.ui.main
+package com.tryden12.titanstabs.ui.main.view
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle

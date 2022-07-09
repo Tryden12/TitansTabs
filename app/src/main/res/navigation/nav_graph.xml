@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.tryden12.titanstabs.ui.main.MainFragment"
+        android:name="com.tryden12.titanstabs.ui.main.view.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" >
         <action
@@ -20,7 +20,7 @@
     </fragment>
     <fragment
         android:id="@+id/searchResultsFragment"
-        android:name="com.tryden12.titanstabs.ui.main.SearchResultsFragment"
+        android:name="com.tryden12.titanstabs.ui.main.view.SearchResultsFragment"
         android:label="search_results_fragment"
         tools:layout="@layout/search_results_fragment" />
 </navigation>
