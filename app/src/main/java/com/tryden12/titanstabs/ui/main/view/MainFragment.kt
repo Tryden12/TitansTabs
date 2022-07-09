@@ -107,10 +107,13 @@ class MainFragment : Fragment(), View.OnClickListener {
 
     private fun initViewModel() {
         val viewModel: ViewModel = ViewModelProvider(this)[ViewModel::class.java]
+        /*
         viewModel.getLiveDataObserver().observe(viewLifecycleOwner, Observer {
             // TODO
         })
 
+
+         */
         viewModel.makeApiCall()
     }
 
