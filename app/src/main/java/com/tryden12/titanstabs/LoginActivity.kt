@@ -27,7 +27,17 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        /********* Bind the Buttons **************************************************************/
+        setStatusBar()
+        initViews()
+        setListeners()
+    }
+
+    fun initViews() {
+        // Transform password to dots
+        binding.editTextPassword.transformationMethod = PasswordTransformationMethod()
+    }
+
+    fun setListeners() {
         binding.buttonLogin.setOnClickListener{ toMainActivity() }
         binding.buttonSignUp.setOnClickListener {
             val intent = Intent(this, CreateUserActivity::class.java)
@@ -37,15 +47,9 @@ class LoginActivity : AppCompatActivity() {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
-
-        // Transform password to dots
-        binding.editTextPassword.transformationMethod = PasswordTransformationMethod()
-
-
-        setStatusBar()
-
     }
-    /*** Method for Testing ***********************************/
+
+    /*** Method for Testing **/
     fun toMainActivity() {
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
@@ -53,7 +57,7 @@ class LoginActivity : AppCompatActivity() {
 
 
 
-    /*** Validation & Check User Credentials ******************************************************/
+    /*** Validation & Check User Credentials **/
     private fun checkUserCredentials() {
         email = binding.editTextEmail.text.toString().trim()
         password = binding.editTextPassword.text.toString().trim()
@@ -62,7 +66,7 @@ class LoginActivity : AppCompatActivity() {
         if (email.isEmpty() || password.isEmpty()) {
             binding.textViewWarning.isVisible = true
         } else {
-            /*** Coroutine for Checking Credentials ***********************************************/
+            /*** Coroutine for Checking Credentials **/
             CoroutineScope(Dispatchers.IO).launch {
                 val userDao = AppDatabase.getDatabase(applicationContext).userDao()
 
