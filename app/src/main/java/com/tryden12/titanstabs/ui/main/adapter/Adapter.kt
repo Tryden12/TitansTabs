@@ -1,6 +1,7 @@
 package com.tryden12.titanstabs.ui.main.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,7 +11,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import com.tryden12.titanstabs.R
 import com.tryden12.titanstabs.data.model.Player
+import com.tryden12.titanstabs.ui.main.view.SearchResultsFragment
+import kotlinx.android.synthetic.main.item_player.view.*
 import kotlinx.coroutines.NonDisposableHandle.parent
+import org.w3c.dom.Text
 
 class Adapter : RecyclerView.Adapter<Adapter.ItemViewHolder>() {
 
@@ -40,16 +44,34 @@ class Adapter : RecyclerView.Adapter<Adapter.ItemViewHolder>() {
     }
 
     // Bind player info to view holder
-    override fun onBindViewHolder(holder: ItemViewHolder, pos: Int) {
-        //holder.
+    override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
+        val player = playerList!![position]
+        holder.bind(playerList?.get(position))
 
+        holder.view.findViewById<View>(R.id.item_linear_layout).setOnClickListener {
+            // Get data for position
+            val playerName = playerList?.get(position)?.strPlayer
+            val playerPosition = playerList?.get(position)?.strPosition
+            val playerNumber = playerList?.get(position)?.strNumber
+            val playerImage = playerList?.get(position)?.strCutout
+
+           // Picasso.get().load(player.strCutout).into(holder.view.findViewById(R.id.player_image))
+
+            // Send data to next fragment
+            val intent = Intent(holder.view.context, SearchResultsFragment::class.java)
+            intent.putExtra("playerName", playerName)
+            intent.putExtra("playerPosition", playerPosition)
+            holder.view.context.startActivity(intent)
+        }
+
+        /*
         val player = playerList!![pos]
         ItemViewHolder.name.text = player.strPlayer.toString()
         ItemViewHolder.position.text = player.strPosition.toString()
         //customViewHolder.image.text = textWithImage.imageSrc.toString()
 
          Picasso.get().load(player.strThumb).into(ItemViewHolder.image)
-
+         */
 
     }
 
@@ -60,20 +82,20 @@ class Adapter : RecyclerView.Adapter<Adapter.ItemViewHolder>() {
     inner class ItemViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
 
         // Create variables for items in item_player layout
-        private val
+        private val playerName: TextView = view.findViewById(R.id.player_name)
+        private val playerPosition: TextView = view.findViewById(R.id.player_position)
+        private val playerNumber: TextView = view.findViewById(R.id.player_number)
+        private val playerImage: ImageView = view.findViewById(R.id.player_image)
 
-        /*
-        var image: ImageView
-        var name : TextView
-        var position : TextView
-
-        init {
-            image    = itemView.findViewById(R.id.item_imageview)
-            name    = itemView.findViewById(R.id.item_name)
-            position = itemView.findViewById(R.id.item_position)
+        // Bind data to player variables
+        fun bind(data: Player?) {
+            if (data != null) {
+                playerName.text = data.strPlayer
+                playerPosition.text = data.strPosition
+                //playerNumber.text = data.strNumber
+                //playerImage.setImageResource(R.id.player_image) = data.strCutout
+            }
         }
-
-         */
 
     }
 }
