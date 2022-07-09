@@ -135,7 +135,7 @@ class MainFragment : Fragment(), View.OnClickListener {
 
 
 
-
+/*
      fun retrievePlayerDataTest() {
         try {
             // Create coroutine for download job
@@ -206,6 +206,8 @@ class MainFragment : Fragment(), View.OnClickListener {
     }
 
 
+
+ */
 
 
 }
