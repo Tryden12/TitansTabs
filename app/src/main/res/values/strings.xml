@@ -42,6 +42,7 @@
     <string name="player">PLAYER</string>
     <string name="description">Description:</string>
     <string name="name">Name</string>
+    <string name="number">Number</string>
     <string name="position">Position:</string>
     <string name="born">Born:</string>
     <string name="image">Image</string>
