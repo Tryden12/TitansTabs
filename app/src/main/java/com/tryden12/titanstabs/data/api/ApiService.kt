@@ -6,7 +6,7 @@ import retrofit2.http.GET
 
 interface ApiService {
 
-    @GET("Tennessee%Titans")
+    @GET("searchplayers.php?t=Tennessee%Titans")
     fun getPlayers() : Call<MutableList<Player>>
 
 }
