@@ -52,8 +52,8 @@ class Adapter : RecyclerView.Adapter<Adapter.ItemViewHolder>() {
             // Get data for position
             val playerName = playerList?.get(position)?.strPlayer
             val playerPosition = playerList?.get(position)?.strPosition
-            val playerNumber = playerList?.get(position)?.strNumber
-            val playerImage = playerList?.get(position)?.strCutout
+            //val playerNumber = playerList?.get(position)?.strNumber
+            //val playerImage = playerList?.get(position)?.strCutout
 
            // Picasso.get().load(player.strCutout).into(holder.view.findViewById(R.id.player_image))
 
