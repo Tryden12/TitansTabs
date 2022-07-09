@@ -18,22 +18,16 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        toggleMenu()
+        initViews()
+        initToggleMenu()
+    }
+
+
+    private fun initViews() {
         window.statusBarColor = resources.getColor(R.color.dark_blue)
-
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-
-        if(toggle.onOptionsItemSelected(item)) {
-            return true
-        }
-
-        return super.onOptionsItemSelected(item)
-    }
-
-
-    private fun toggleMenu() {
+    private fun initToggleMenu() {
         /***************** Toggle Menu ****************************************************/
         toggle = ActionBarDrawerToggle(this, binding.drawerLayout, R.string.open, R.string.close)
         binding.drawerLayout.addDrawerListener(toggle)
@@ -50,6 +44,11 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if(toggle.onOptionsItemSelected(item)) { return true }
+        return super.onOptionsItemSelected(item)
     }
 
 
