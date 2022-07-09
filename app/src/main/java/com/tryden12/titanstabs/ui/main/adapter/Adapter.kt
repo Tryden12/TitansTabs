@@ -23,7 +23,7 @@ class Adapter : RecyclerView.Adapter<Adapter.ItemViewHolder>() {
     private var playerList: List<Player>? = null
 
     // Set list of players
-    fun setPlayerList(playerList: List<Player>) {
+    fun setPlayerList(playerList: List<Player>?) {
         this.playerList = playerList
     }
 
@@ -63,16 +63,6 @@ class Adapter : RecyclerView.Adapter<Adapter.ItemViewHolder>() {
             intent.putExtra("playerPosition", playerPosition)
             holder.view.context.startActivity(intent)
         }
-
-        /*
-        val player = playerList!![pos]
-        ItemViewHolder.name.text = player.strPlayer.toString()
-        ItemViewHolder.position.text = player.strPosition.toString()
-        //customViewHolder.image.text = textWithImage.imageSrc.toString()
-
-         Picasso.get().load(player.strThumb).into(ItemViewHolder.image)
-         */
-
     }
 
     override fun getItemCount(): Int {
@@ -84,8 +74,8 @@ class Adapter : RecyclerView.Adapter<Adapter.ItemViewHolder>() {
         // Create variables for items in item_player layout
         private val playerName: TextView = view.findViewById(R.id.player_name)
         private val playerPosition: TextView = view.findViewById(R.id.player_position)
-        private val playerNumber: TextView = view.findViewById(R.id.player_number)
-        private val playerImage: ImageView = view.findViewById(R.id.player_image)
+        //private val playerNumber: TextView = view.findViewById(R.id.player_number)
+        //private val playerImage: ImageView = view.findViewById(R.id.player_image)
 
         // Bind data to player variables
         fun bind(data: Player?) {
