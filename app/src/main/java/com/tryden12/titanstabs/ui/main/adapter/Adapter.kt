@@ -89,12 +89,11 @@ class Adapter : RecyclerView.Adapter<Adapter.ItemViewHolder>() {
 
         // Bind data to player variables
         fun bind(data: Player?) {
-            if (data != null) {
-                playerName.text = data.strPlayer
-                playerPosition.text = data.strPosition
+                playerName.text = data!!.strPlayer
+                playerPosition.text = data!!.strPosition
                 //playerNumber.text = data.strNumber
                 //playerImage.setImageResource(R.id.player_image) = data.strCutout
-            }
+
         }
 
     }
