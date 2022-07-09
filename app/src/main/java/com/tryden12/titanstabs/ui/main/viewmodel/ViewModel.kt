@@ -19,13 +19,13 @@ class ViewModel : ViewModel() {
     private val dataRepository = DataRepository()
 
     // Live data for the list from Api
-    var liveDataList: MutableLiveData<MutableList<Player>> = MutableLiveData()
+    var liveDataList: MutableLiveData<MutableList<Player>?> = MutableLiveData()
 
     // Live data for each item
     var liveItemData: MutableLiveData<Player> = MutableLiveData()
 
     // Observer for live list
-    fun getLiveDataObserver(): MutableLiveData<MutableList<Player>> {
+    fun getLiveDataObserver(): MutableLiveData<MutableList<Player>?> {
         return liveDataList
     }
 
@@ -45,7 +45,6 @@ class ViewModel : ViewModel() {
                 liveDataList.postValue(response.body())
             }
 
-            @SuppressLint("NullSafeMutableLiveData")
             override fun onFailure(call: Call<MutableList<Player>>, t: Throwable) {
                 liveDataList.postValue(null)
             }
