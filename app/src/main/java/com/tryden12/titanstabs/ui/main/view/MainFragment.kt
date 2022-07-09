@@ -61,20 +61,21 @@ class MainFragment : Fragment(), View.OnClickListener {
             //binding.textViewTestingJson.text = it.strPlayer
         }
 
-        // Setup Layout Manager
-        val layoutManager = LinearLayoutManager(context)
-        binding.myRecyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-        binding.myRecyclerView!!.itemAnimator = DefaultItemAnimator()
-        binding.myRecyclerView.adapter = Adapter(context, playerModelArrayList)
-        // Add divider
-        val divider = DividerItemDecoration(
-            context, layoutManager.orientation
-        )
-        binding.myRecyclerView.addItemDecoration(divider)
-
+        initRecyclerView()
         //retrievePlayerDataTest()
 
 
+    }
+
+    private fun initRecyclerView() {
+        binding.myRecyclerView.apply {
+            layoutManager = LinearLayoutManager(context,LinearLayoutManager.VERTICAL, false)
+            adapter = Adapter()
+            val divider = DividerItemDecoration(
+                context, (layoutManager as LinearLayoutManager).orientation
+            )
+            addItemDecoration(divider)
+        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
