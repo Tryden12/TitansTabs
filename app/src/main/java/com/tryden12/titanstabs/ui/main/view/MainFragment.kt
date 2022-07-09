@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
@@ -20,6 +21,13 @@ import com.tryden12.titanstabs.databinding.FragmentMainBinding
 import com.tryden12.titanstabs.ui.main.adapter.Adapter
 import com.tryden12.titanstabs.ui.main.viewmodel.ViewModel
 import kotlinx.coroutines.*
+import org.json.JSONArray
+import org.json.JSONException
+import org.json.JSONObject
+import java.io.BufferedInputStream
+import java.io.BufferedReader
+import java.net.URL
+import java.net.URLConnection
 
 
 class MainFragment : Fragment(), View.OnClickListener {
@@ -57,14 +65,33 @@ class MainFragment : Fragment(), View.OnClickListener {
 
         //binding.textviewHeadingSearchPlayer.text = viewModel.fetchPlayer().strPlayer
 
-        viewModel.playerLiveData.observe(viewLifecycleOwner) {
+        viewModel.liveItemData.observe(viewLifecycleOwner) {
             //binding.textViewTestingJson.text = it.strPlayer
         }
 
+        initViewModel()
         initRecyclerView()
         //retrievePlayerDataTest()
 
 
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        navController = Navigation.findNavController(view)
+        view.findViewById<Button>(R.id.search_button).setOnClickListener(this)
+    }
+
+    private fun disableOnBackPressed() {
+        val callback: OnBackPressedCallback =
+            object : OnBackPressedCallback(true /* enabled by default */) {
+                override fun handleOnBackPressed() {
+                    // Handle the back button even
+                    Log.d("BACKBUTTON", "Back button clicks")
+                }
+            }
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)
     }
 
     private fun initRecyclerView() {
@@ -78,14 +105,13 @@ class MainFragment : Fragment(), View.OnClickListener {
         }
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    private fun initViewModel() {
+        val viewModel: ViewModel = ViewModelProvider(this)[ViewModel::class.java]
+        viewModel.getLiveDataObserver().observe(viewLifecycleOwner, Observer {
+            // TODO
+        })
 
-        navController = Navigation.findNavController(view)
-        view.findViewById<Button>(R.id.search_button).setOnClickListener(this)
-
-
-
+        viewModel.makeApiCall()
     }
 
     override fun onClick(v: View?) {
@@ -94,19 +120,6 @@ class MainFragment : Fragment(), View.OnClickListener {
         }
     }
 
-    fun disableOnBackPressed() {
-
-        val callback: OnBackPressedCallback =
-            object : OnBackPressedCallback(true /* enabled by default */) {
-                override fun handleOnBackPressed() {
-                    // Handle the back button even
-                    Log.d("BACKBUTTON", "Back button clicks")
-                }
-            }
-
-        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)
-
-    }
 
 
 
@@ -122,7 +135,7 @@ class MainFragment : Fragment(), View.OnClickListener {
 
 
 
-/*
+
      fun retrievePlayerDataTest() {
         try {
             // Create coroutine for download job
@@ -193,6 +206,6 @@ class MainFragment : Fragment(), View.OnClickListener {
     }
 
 
- */
+
 
 }
