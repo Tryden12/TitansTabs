@@ -5,12 +5,12 @@ import com.tryden12.titanstabs.data.model.Player
 
 import com.tryden12.titanstabs.data.model.Players
 import java.net.URL
-
+/*
 class ManualParsingImpl : ApiService{
     override fun getPlayers(): List<MutableList<Player>> {
 
         val url = URL("https://www.thesportsdb.com/api/v1/json/50130162/searchplayers.php?t=Tennessee%Titans")
-        /*
+
         //val url = URL("https://my-json-server.typicode.com/Tryden12/mockjson/db")
         val connection : URLConnection = url.openConnection()
         connection.connect()
@@ -48,7 +48,7 @@ class ManualParsingImpl : ApiService{
             )
         ))
 
-         */
+
 
         return Players(listOf(
             Player(
@@ -59,3 +59,4 @@ class ManualParsingImpl : ApiService{
 
     }
 }
+*/
