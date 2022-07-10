@@ -10,9 +10,15 @@
         android:name="com.tryden12.titanstabs.ui.main.view.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" >
+
         <action
             android:id="@+id/action_mainFragment_to_rosterFragment"
-            app:destination="@id/rosterFragment" />
+            app:destination="@id/rosterFragment"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+
     </fragment>
     <fragment
         android:id="@+id/rosterFragment"
@@ -21,7 +27,12 @@
         tools:layout="@layout/fragment_roster" >
         <action
             android:id="@+id/action_rosterFragment_to_playerDetailsFragment"
-            app:destination="@id/playerDetailsFragment" />
+            app:destination="@id/playerDetailsFragment"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+
     </fragment>
     <fragment
         android:id="@+id/playerDetailsFragment"
