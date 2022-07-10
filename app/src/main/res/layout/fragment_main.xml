@@ -58,21 +58,6 @@
 
 
         <TextView
-            android:id="@+id/textview_player_heading"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="25dp"
-            android:fontFamily="@font/roboto_bold"
-            android:text="Heading"
-            android:textAllCaps="true"
-            android:textColor="@color/dark_blue"
-            android:textSize="20sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-
-        <TextView
             android:id="@+id/textview_heading_search_player"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -89,30 +74,44 @@
         <View
             android:id="@+id/view_player_details"
             android:layout_width="0dp"
-            android:layout_height="100dp"
+            android:layout_height="@dimen/_75sdp"
             android:layout_marginStart="12dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="@dimen/_8sdp"
             android:layout_marginEnd="12dp"
             android:background="@drawable/card_bg"
             android:elevation="10dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textview_player_heading" />
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:elevation="12dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/icon_helmet"
+            app:layout_constraintStart_toStartOf="@+id/view_player_details"
+            app:layout_constraintTop_toTopOf="@+id/view_player_details" />
+
 
         <TextView
             android:id="@+id/textView_name_json"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="60dp"
-            android:text="Fill"
-            android:fontFamily="@font/roboto_bold"
-            android:textSize="20sp"
+            android:layout_marginStart="35dp"
             android:elevation="12dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/roster"
             android:textColor="@color/dark_blue"
+            android:textSize="@dimen/_12sdp"
             app:layout_constraintStart_toStartOf="@+id/view_player_details"
-            app:layout_constraintTop_toTopOf="@+id/view_player_details" />
-
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
         <View
             android:id="@+id/view_player_description"
