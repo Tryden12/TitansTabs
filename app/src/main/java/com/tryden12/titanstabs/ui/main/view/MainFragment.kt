@@ -17,7 +17,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.tryden12.titanstabs.R
 import com.tryden12.titanstabs.databinding.FragmentMainBinding
-import com.tryden12.titanstabs.ui.main.adapter.Adapter
+import com.tryden12.titanstabs.data.adapter.Adapter
 import com.tryden12.titanstabs.ui.main.viewmodel.ViewModel
 
 
