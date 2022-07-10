@@ -56,6 +56,15 @@ class Adapter : RecyclerView.Adapter<Adapter.ItemViewHolder>() {
 
         holder.view.findViewById<View>(R.id.item_linear_layout).setOnClickListener {
             // Send data to next fragment
+
+            /*
+
+            Check your bookmarks to learn how to send data from one frag to another from recyclerview
+
+             */
+
+
+
             val intent = Intent(holder.view.context, SearchResultsFragment::class.java)
             intent.putExtra("name", playerName)
             intent.putExtra("position", playerPosition)
