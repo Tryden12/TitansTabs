@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -26,15 +27,13 @@ class MainFragment : Fragment(), View.OnClickListener {
     private lateinit var binding: FragmentMainBinding
 
     var navController : NavController? = null
-    private lateinit var adapter : Adapter
+    private lateinit var playerAdapter : Adapter
 
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-        // Inflate the layout for this fragment
-        //return inflater.inflate(R.layout.fragment_main, container, false)
        binding = FragmentMainBinding.inflate(layoutInflater)
        return binding.root
     }
@@ -54,7 +53,8 @@ class MainFragment : Fragment(), View.OnClickListener {
     private fun initRecyclerView() {
         binding.myRecyclerView.apply {
             layoutManager = LinearLayoutManager(context,LinearLayoutManager.VERTICAL, false)
-            adapter = Adapter()
+            playerAdapter = Adapter()
+            adapter = playerAdapter
             val divider = DividerItemDecoration(
                 context, (layoutManager as LinearLayoutManager).orientation
             )
@@ -65,8 +65,14 @@ class MainFragment : Fragment(), View.OnClickListener {
     private fun initViewModel() {
         val viewModel: ViewModel = ViewModelProvider(this)[ViewModel::class.java]
         viewModel.getLiveDataObserver().observe(viewLifecycleOwner, Observer {
-            adapter.setPlayerList(it)
-            adapter.notifyDataSetChanged()
+
+            // Set player list
+            if (it != null) {
+                playerAdapter.setPlayerList(it)
+                playerAdapter.notifyDataSetChanged()
+            } else {
+                Toast.makeText(context, "Error", Toast.LENGTH_SHORT).show()
+            }
         })
         viewModel.makeApiCall()
     }
