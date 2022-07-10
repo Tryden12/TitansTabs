@@ -45,7 +45,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textview_player_heading" />
 
         <TextView
-            android:id="@+id/playerName_textview"
+            android:id="@+id/player_name_textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -70,7 +70,7 @@
             android:textColor="@color/steel_grey"
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="@+id/view_player_details"
-            app:layout_constraintTop_toBottomOf="@+id/playerName_textview" />
+            app:layout_constraintTop_toBottomOf="@+id/player_name_textview" />
 
 
         <TextView
@@ -85,7 +85,7 @@
             android:textColor="@color/steel_grey"
             android:textSize="14sp"
             app:layout_constraintStart_toEndOf="@+id/textView_position"
-            app:layout_constraintTop_toBottomOf="@+id/playerName_textview" />
+            app:layout_constraintTop_toBottomOf="@+id/player_name_textview" />
 
 
         <TextView
