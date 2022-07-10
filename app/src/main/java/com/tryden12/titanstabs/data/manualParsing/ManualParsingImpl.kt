@@ -1,10 +1,5 @@
 package com.tryden12.titanstabs.data.manualParsing
 
-import com.tryden12.titanstabs.data.api.ApiService
-import com.tryden12.titanstabs.data.model.Player
-
-import com.tryden12.titanstabs.data.model.Players
-import java.net.URL
 /*
 class ManualParsingImpl : ApiService{
     override fun getPlayers(): List<MutableList<Player>> {
