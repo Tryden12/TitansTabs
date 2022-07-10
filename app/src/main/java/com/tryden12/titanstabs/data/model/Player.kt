@@ -1,7 +1,18 @@
 package com.tryden12.titanstabs.data.model
 
+import com.squareup.moshi.JsonClass
 
 data class Player(
+    val strPlayer: String? = null,
+    val dateBorn: String? = null,
+    val strNumber: String? = null,
+    val strDescriptionEN: String? = null,
+    val strPosition: String? = null,
+    val strHeight: String? = null,
+    val strWeight: String? = null,
+    val strCutout: String? = null,
+
+    /*
     val dateBorn: String? = null,
     val dateSigned: String? = null,
     val idAPIfootball: String? = null,
@@ -62,4 +73,6 @@ data class Player(
     val strWebsite: String? = null,
     val strWeight: String? = null,
     val strYoutube: String? = null
+
+     */
 )
