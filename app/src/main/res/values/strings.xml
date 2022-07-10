@@ -40,6 +40,12 @@
 
     <!-- Main Fragment -->
     <string name="roster">Roster</string>
+    <string name="news">News</string>
+
+
+    <!-- Main Fragment -->
+    <string name="college">College</string>
+
 
     <!-- Player Details Fragment -->
     <string name="player">PLAYER</string>
