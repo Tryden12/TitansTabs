@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.tryden12.titanstabs.data.adapter.Adapter
 import com.tryden12.titanstabs.data.api.RetrofitInstance.apiService
 import com.tryden12.titanstabs.data.repository.DataRepository
 import com.tryden12.titanstabs.data.model.Player
