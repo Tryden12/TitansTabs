@@ -38,7 +38,10 @@
     <string name="search_hint">Search..</string>
 
 
-    <!-- Search Results Fragment -->
+    <!-- Main Fragment -->
+    <string name="roster">Roster</string>
+
+    <!-- Player Details Fragment -->
     <string name="player">PLAYER</string>
     <string name="description">Description:</string>
     <string name="name">Name</string>
