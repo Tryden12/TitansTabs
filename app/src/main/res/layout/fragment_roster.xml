@@ -17,7 +17,6 @@
             android:layout_height="wrap_content"
             android:background="@drawable/recycler_bg"
             android:elevation="10dp"
-            android:padding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
