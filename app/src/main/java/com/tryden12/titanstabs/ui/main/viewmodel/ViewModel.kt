@@ -1,16 +1,10 @@
 package com.tryden12.titanstabs.ui.main.viewmodel
 
-import android.annotation.SuppressLint
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
-import com.tryden12.titanstabs.data.adapter.Adapter
 import com.tryden12.titanstabs.data.api.RetrofitInstance.apiService
 import com.tryden12.titanstabs.data.repository.DataRepository
 import com.tryden12.titanstabs.data.model.Player
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
