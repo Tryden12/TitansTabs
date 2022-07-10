@@ -12,12 +12,14 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.tryden12.titanstabs.data.adapter.Adapter
+import com.tryden12.titanstabs.R
+import com.tryden12.titanstabs.adapter.Adapter
 import com.tryden12.titanstabs.databinding.FragmentRosterBinding
+import com.tryden12.titanstabs.interfaces.FragmentCommunicator
 import com.tryden12.titanstabs.ui.main.viewmodel.ViewModel
 
 
-class RosterFragment : Fragment(), View.OnClickListener {
+class RosterFragment : Fragment(), FragmentCommunicator {
 
     private lateinit var binding: FragmentRosterBinding
     private lateinit var playerAdapter: Adapter
@@ -43,7 +45,7 @@ class RosterFragment : Fragment(), View.OnClickListener {
     private fun initRecyclerView() {
         binding.myRecyclerView.apply {
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-            playerAdapter = Adapter()
+            playerAdapter = Adapter(this@RosterFragment)
             adapter = playerAdapter
             val divider = DividerItemDecoration(
                 context, (layoutManager as LinearLayoutManager).orientation
@@ -67,10 +69,38 @@ class RosterFragment : Fragment(), View.OnClickListener {
         viewModel.makeApiCall()
     }
 
+    override fun passData(
+        position: Int,
+        playerName: String,
+        playerPosition: String,
+        playerNumber: String,
+        playerHeight: String,
+        playerWeight: String,
+        playerAge: String,
+        playerImage: String,
+        playerExperience: String,
+        playerCollege: String,
+        playerBio: String
+    ) {
+        val bundle = Bundle()
+        bundle.putInt("adapterPosition", position)
+        bundle.putString("playerName", playerName)
+        bundle.putString("playerPosition", playerPosition)
+        bundle.putString("playerNumber", playerNumber)
+        bundle.putString("playerWeight", playerWeight)
+        bundle.putString("playerAge", playerAge)
+        bundle.putString("playerImage", playerImage)
+        bundle.putString("playerExperience", playerExperience)
+        bundle.putString("playerCollege", playerCollege)
+        bundle.putString("playerBio", playerBio)
 
-    override fun onClick(view: View?) {
-        TODO("Not yet implemented")
+        val transaction = this.parentFragmentManager.beginTransaction()
+        val playerDetailFrag = PlayerDetailsFragment()
+        playerDetailFrag.arguments = bundle
+
+        transaction.replace(R.id.frame_layout,playerDetailFrag)
+        transaction.addToBackStack(null)
+        transaction.commit()
     }
-
 
 }
