@@ -86,7 +86,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/roster_icon_imageView"
             android:layout_width="@dimen/_40sdp"
             android:layout_height="@dimen/_40sdp"
             android:layout_alignParentTop="true"
@@ -101,7 +101,7 @@
 
 
         <TextView
-            android:id="@+id/textView_name_json"
+            android:id="@+id/roster_textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="35dp"
@@ -111,7 +111,7 @@
             android:textColor="@color/dark_blue"
             android:textSize="@dimen/_12sdp"
             app:layout_constraintStart_toStartOf="@+id/view_player_details"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+            app:layout_constraintTop_toBottomOf="@+id/roster_icon_imageView" />
 
         <View
             android:id="@+id/view_player_description"
