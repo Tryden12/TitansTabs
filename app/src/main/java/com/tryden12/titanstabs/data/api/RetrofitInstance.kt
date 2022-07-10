@@ -4,17 +4,17 @@ import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
+import com.tryden12.titanstabs.utils.Constants
 import retrofit2.converter.gson.GsonConverterFactory
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
+import com.tryden12.titanstabs.utils.Constants.BASE_URL
 import retrofit2.converter.moshi.MoshiConverterFactory
 
 
 object RetrofitInstance {
 
-    // Base Url
-    private const val BASE_URL: String =
-        "https://www.thesportsdb.com/api/v1/json/50130162/" // searchplayers.php?t=Tennessee%Titans
+    // Base Url located in constants
 
     // Create Moshi instance
     private val moshi = Moshi.Builder()
