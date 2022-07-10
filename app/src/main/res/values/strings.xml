@@ -53,7 +53,7 @@
     <string name="name">Name</string>
     <string name="number">Number</string>
     <string name="position">Position</string>
-    <string name="age">Age</string>
+    <string name="age">Age:</string>
     <string name="experience">Experience:</string>
     <string name="bio">Bio</string>
     <string name="image">Image</string>
