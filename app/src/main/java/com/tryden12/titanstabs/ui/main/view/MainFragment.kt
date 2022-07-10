@@ -12,8 +12,6 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
-import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.tryden12.titanstabs.R
 import com.tryden12.titanstabs.databinding.FragmentMainBinding
 import com.tryden12.titanstabs.adapter.Adapter
@@ -49,11 +47,11 @@ class MainFragment : Fragment(), View.OnClickListener {
     }
 
 
-
+/*
     private fun initRecyclerView() {
         binding.myRecyclerView.apply {
             layoutManager = LinearLayoutManager(context,LinearLayoutManager.VERTICAL, false)
-            playerAdapter = Adapter()
+            playerAdapter = Adapter(this@MainFragment)
             adapter = playerAdapter
             val divider = DividerItemDecoration(
                 context, (layoutManager as LinearLayoutManager).orientation
@@ -61,6 +59,8 @@ class MainFragment : Fragment(), View.OnClickListener {
             addItemDecoration(divider)
         }
     }
+
+ */
 
     private fun initViewModel() {
         val viewModel: ViewModel = ViewModelProvider(this)[ViewModel::class.java]
