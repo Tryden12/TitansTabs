@@ -45,7 +45,7 @@
 
 
         <TextView
-            android:id="@+id/textView_name_json"
+            android:id="@+id/roster_textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -70,7 +70,7 @@
             android:textColor="@color/dark_blue"
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="@+id/view_player_details"
-            app:layout_constraintTop_toBottomOf="@+id/textView_name_json" />
+            app:layout_constraintTop_toBottomOf="@+id/roster_textview" />
 
 
         <TextView
@@ -85,7 +85,7 @@
             android:textColor="@color/dark_blue"
             android:textSize="14sp"
             app:layout_constraintStart_toEndOf="@+id/textView_position"
-            app:layout_constraintTop_toBottomOf="@+id/textView_name_json" />
+            app:layout_constraintTop_toBottomOf="@+id/roster_textview" />
 
         <TextView
             android:id="@+id/textView_height"
