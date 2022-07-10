@@ -1,4 +1,4 @@
-package com.tryden12.titanstabs.data.adapter
+package com.tryden12.titanstabs.adapter
 
 import android.content.Intent
 import android.view.LayoutInflater
@@ -10,9 +10,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.tryden12.titanstabs.R
 import com.tryden12.titanstabs.data.model.Player
+import com.tryden12.titanstabs.interfaces.FragmentCommunicator
 import com.tryden12.titanstabs.ui.main.view.PlayerDetailsFragment
+import com.tryden12.titanstabs.ui.main.view.RosterFragment
 
-class Adapter : RecyclerView.Adapter<Adapter.ItemViewHolder>() {
+class Adapter(val listener: FragmentCommunicator) : RecyclerView.Adapter<Adapter.ItemViewHolder>() {
 
 
     // List of players
@@ -54,16 +56,15 @@ class Adapter : RecyclerView.Adapter<Adapter.ItemViewHolder>() {
             .load(playerImage)
             .into(holder.view.findViewById(R.id.player_image))
 
-
+/*
 
         holder.view.findViewById<View>(R.id.item_linear_layout).setOnClickListener {
             // Send data to next fragment
 
-            /*
+
 
             Check your bookmarks to learn how to send data from one frag to another from recyclerview
 
-             */
 
 
 
@@ -80,6 +81,8 @@ class Adapter : RecyclerView.Adapter<Adapter.ItemViewHolder>() {
 
             holder.view.context.startActivity(intent)
         }
+
+ */
     }
 
     override fun getItemCount(): Int {
@@ -87,7 +90,7 @@ class Adapter : RecyclerView.Adapter<Adapter.ItemViewHolder>() {
         else playerList?.size!!
     }
 
-    inner class ItemViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
+    inner class ItemViewHolder(val view: View) : RecyclerView.ViewHolder(view), View.OnClickListener {
 
         // Create variables for items in item_player layout
         private val playerImage: ImageView = view.findViewById(R.id.player_image)
@@ -104,6 +107,36 @@ class Adapter : RecyclerView.Adapter<Adapter.ItemViewHolder>() {
                 playerCollege.text = data.strCollege
                 playerPosition.text = data.strPosition
                 playerNumber.text = data.strNumber
+            }
+        }
+
+        init {
+            // Assign click listener to item view
+            view.setOnClickListener(this)
+        }
+
+        override fun onClick(view: View?) {
+            // Get position
+            val position = adapterPosition
+
+            // Assign data to variable
+            val playerName: String = playerList?.get(adapterPosition)?.strPlayer.toString()
+            val playerPosition: String = playerList?.get(adapterPosition)?.strPosition.toString()
+            val playerNumber: String = playerList?.get(adapterPosition)?.strNumber.toString()
+            val playerHeight: String = playerList?.get(adapterPosition)?.strHeight.toString()
+            val playerWeight: String = playerList?.get(adapterPosition)?.strWeight.toString()
+            val playerAge: String = playerList?.get(adapterPosition)?.strAge.toString()
+            val playerImage: String = playerList?.get(adapterPosition)?.strThumb.toString()
+            val playerExperience: String = playerList?.get(adapterPosition)?.strExperience.toString()
+            val playerCollege: String = playerList?.get(adapterPosition)?.strCollege.toString()
+            val playerBio: String = playerList?.get(adapterPosition)?.strBio.toString()
+
+            // Send bundle of data
+            if (position != RecyclerView.NO_POSITION) {
+                listener.passData(position, playerName, playerPosition, playerNumber, playerHeight,
+                                    playerWeight, playerAge, playerImage, playerExperience,
+                                    playerCollege, playerBio
+                )
             }
         }
     }
