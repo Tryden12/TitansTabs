@@ -45,7 +45,6 @@ class ViewModel : ViewModel() {
                 liveDataList.postValue(response.body())
             }
 
-            @SuppressLint("NullSafeMutableLiveData")
             override fun onFailure(call: Call<MutableList<Player>>, t: Throwable) {
                 liveDataList.postValue(null)
             }

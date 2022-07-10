@@ -23,12 +23,6 @@ class Adapter : RecyclerView.Adapter<Adapter.ItemViewHolder>() {
         this.playerList = playerList
     }
 
-    // Get list of players
-    fun getPlayerList(): List<Player>? {
-        return playerList
-    }
-
-
     // Setup ViewHolder
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -41,7 +35,6 @@ class Adapter : RecyclerView.Adapter<Adapter.ItemViewHolder>() {
 
     // Bind player info to view holder
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
-        val player = playerList!![position]
         holder.bind(playerList?.get(position))
 
         // Get data for position
@@ -76,7 +69,8 @@ class Adapter : RecyclerView.Adapter<Adapter.ItemViewHolder>() {
     }
 
     override fun getItemCount(): Int {
-        return if (playerList == null) 0 else playerList!!.size
+        return if (playerList == null) 0
+        else playerList?.size!!
     }
 
     inner class ItemViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
@@ -88,12 +82,12 @@ class Adapter : RecyclerView.Adapter<Adapter.ItemViewHolder>() {
         private val playerImage: ImageView = view.findViewById(R.id.player_image)
 
         // Bind data to player variables
-        fun bind(data: Player?) {
-                playerName.text = data!!.strPlayer
-                playerPosition.text = data!!.strPosition
+        fun bind(data : Player?) {
+            if (data != null) {
+                playerName.text = data.strPlayer
+                playerPosition.text = data.strPosition
                 playerNumber.text = data.strNumber
+            }
         }
-
-
     }
 }
