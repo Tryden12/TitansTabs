@@ -79,7 +79,7 @@ class MainFragment : Fragment(), View.OnClickListener {
 
     override fun onClick(v: View?) {
         when (v!!.id) {
-            R.id.search_button -> navController!!.navigate((R.id.action_mainFragment_to_searchResultsFragment2))
+           // R.id.search_button -> navController!!.navigate((R.id.action_mainFragment_to_searchResultsFragment2))
         }
     }
 

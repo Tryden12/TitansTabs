@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.tryden12.titanstabs.R
 import com.tryden12.titanstabs.data.model.Player
-import com.tryden12.titanstabs.ui.main.view.SearchResultsFragment
+import com.tryden12.titanstabs.ui.main.view.PlayerDetailsFragment
 
 class Adapter : RecyclerView.Adapter<Adapter.ItemViewHolder>() {
 
@@ -67,7 +67,7 @@ class Adapter : RecyclerView.Adapter<Adapter.ItemViewHolder>() {
 
 
 
-            val intent = Intent(holder.view.context, SearchResultsFragment::class.java)
+            val intent = Intent(holder.view.context, PlayerDetailsFragment::class.java)
             intent.putExtra("name", playerName)
             intent.putExtra("position", playerPosition)
             intent.putExtra("number", playerNumber)

@@ -9,10 +9,10 @@ import android.view.ViewGroup
 import com.tryden12.titanstabs.R
 import com.tryden12.titanstabs.ui.main.viewmodel.ViewModel
 
-class SearchResultsFragment : Fragment() {
+class PlayerDetailsFragment : Fragment() {
 
     companion object {
-        fun newInstance() = SearchResultsFragment()
+        fun newInstance() = PlayerDetailsFragment()
     }
 
     private lateinit var viewModel: ViewModel
@@ -21,7 +21,7 @@ class SearchResultsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-        return inflater.inflate(R.layout.search_results_fragment, container, false)
+        return inflater.inflate(R.layout.player_details_fragment, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
