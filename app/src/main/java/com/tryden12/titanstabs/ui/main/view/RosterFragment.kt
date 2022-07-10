@@ -87,6 +87,7 @@ class RosterFragment : Fragment(), FragmentCommunicator {
         bundle.putString("playerName", playerName)
         bundle.putString("playerPosition", playerPosition)
         bundle.putString("playerNumber", playerNumber)
+        bundle.putString("playerHeight", playerHeight)
         bundle.putString("playerWeight", playerWeight)
         bundle.putString("playerAge", playerAge)
         bundle.putString("playerImage", playerImage)
