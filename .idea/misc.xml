@@ -23,6 +23,7 @@
         <entry key="app/src/main/res/layout/item_player.xml" value="0.33177083333333335" />
         <entry key="app/src/main/res/layout/item_view.xml" value="0.325" />
         <entry key="app/src/main/res/layout/nav_header.xml" value="0.37604166666666666" />
+        <entry key="app/src/main/res/layout/player_details_fragment.xml" value="0.33177083333333335" />
         <entry key="app/src/main/res/layout/search_results_fragment.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/shape_edittext.xml" value="0.24166666666666667" />
         <entry key="app/src/main/res/layout/test_fragment.xml" value="0.37604166666666666" />
