@@ -38,14 +38,16 @@ class Adapter : RecyclerView.Adapter<Adapter.ItemViewHolder>() {
         holder.bind(playerList?.get(position))
 
         // Get data for position
-        val playerImage = playerList?.get(position)?.strThumb
         val playerName = playerList?.get(position)?.strPlayer
         val playerPosition = playerList?.get(position)?.strPosition
+        val playerNumber = playerList?.get(position)?.strNumber
         val playerHeight = playerList?.get(position)?.strHeight
         val playerWeight = playerList?.get(position)?.strWeight
-        val playerDOB = playerList?.get(position)?.dateBorn
-        val playerDescription = playerList?.get(position)?.strDescriptionEN
-        val playerNumber = playerList?.get(position)?.strNumber
+        val playerAge = playerList?.get(position)?.strAge
+        val playerImage = playerList?.get(position)?.strThumb
+        val playerExperience = playerList?.get(position)?.strExperience
+        val playerCollege = playerList?.get(position)?.strCollege
+        val playerBio = playerList?.get(position)?.strBio
 
         // Load image into imageview
         Glide.with(holder.view.context)
@@ -68,11 +70,14 @@ class Adapter : RecyclerView.Adapter<Adapter.ItemViewHolder>() {
             val intent = Intent(holder.view.context, SearchResultsFragment::class.java)
             intent.putExtra("name", playerName)
             intent.putExtra("position", playerPosition)
+            intent.putExtra("number", playerNumber)
             intent.putExtra("height", playerHeight)
             intent.putExtra("weight", playerWeight)
-            intent.putExtra("dob", playerDOB)
-            intent.putExtra("desc", playerDescription)
-            intent.putExtra("number", playerNumber)
+            intent.putExtra("age", playerAge)
+            intent.putExtra("image", playerImage)
+            intent.putExtra("college", playerCollege)
+            intent.putExtra("bio", playerBio)
+
             holder.view.context.startActivity(intent)
         }
     }

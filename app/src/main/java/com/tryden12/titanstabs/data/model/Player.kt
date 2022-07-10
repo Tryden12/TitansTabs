@@ -4,14 +4,15 @@ import com.squareup.moshi.JsonClass
 
 data class Player(
     val strPlayer: String? = null,
-    val dateBorn: String? = null,
-    val strNumber: String? = null,
-    val strDescriptionEN: String? = null,
     val strPosition: String? = null,
+    val strNumber: String? = null,
     val strHeight: String? = null,
     val strWeight: String? = null,
-    val strCutout: String? = null,
+    val strAge: String? = null,
     val strThumb: String? = null,
+    val strExperience: String? = null,
+    val strCollege: String? = null,
+    val strBio: String? = null,
 
     /*
     val dateBorn: String? = null,
