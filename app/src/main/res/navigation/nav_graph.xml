@@ -9,5 +9,23 @@
         android:id="@+id/mainFragment"
         android:name="com.tryden12.titanstabs.ui.main.view.MainFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_rosterFragment"
+            app:destination="@id/rosterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/rosterFragment"
+        android:name="com.tryden12.titanstabs.ui.main.view.RosterFragment"
+        android:label="fragment_roster"
+        tools:layout="@layout/fragment_roster" >
+        <action
+            android:id="@+id/action_rosterFragment_to_playerDetailsFragment"
+            app:destination="@id/playerDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/playerDetailsFragment"
+        android:name="com.tryden12.titanstabs.ui.main.view.PlayerDetailsFragment"
+        android:label="player_details_fragment"
+        tools:layout="@layout/player_details_fragment" />
 </navigation>
