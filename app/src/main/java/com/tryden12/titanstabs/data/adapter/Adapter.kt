@@ -1,6 +1,5 @@
-package com.tryden12.titanstabs.ui.main.adapter
+package com.tryden12.titanstabs.data.adapter
 
-import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
@@ -9,13 +8,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.squareup.picasso.Picasso
 import com.tryden12.titanstabs.R
 import com.tryden12.titanstabs.data.model.Player
 import com.tryden12.titanstabs.ui.main.view.SearchResultsFragment
-import kotlinx.android.synthetic.main.item_player.view.*
-import kotlinx.coroutines.NonDisposableHandle.parent
-import org.w3c.dom.Text
 
 class Adapter : RecyclerView.Adapter<Adapter.ItemViewHolder>() {
 
@@ -49,22 +44,24 @@ class Adapter : RecyclerView.Adapter<Adapter.ItemViewHolder>() {
         val player = playerList!![position]
         holder.bind(playerList?.get(position))
 
+        // Get data for position
+        val playerImage = playerList?.get(position)?.strCutout
+        val playerName = playerList?.get(position)?.strPlayer
+        val playerPosition = playerList?.get(position)?.strPosition
+        val playerHeight = playerList?.get(position)?.strHeight
+        val playerWeight = playerList?.get(position)?.strWeight
+        val playerDOB = playerList?.get(position)?.dateBorn
+        val playerDescription = playerList?.get(position)?.strDescriptionEN
+        val playerNumber = playerList?.get(position)?.strNumber
+
+        // Load image into imageview
+        Glide.with(holder.view.context)
+            .load(playerImage)
+            .into(holder.view.findViewById(R.id.player_image))
+
+
+
         holder.view.findViewById<View>(R.id.item_linear_layout).setOnClickListener {
-            // Get data for position
-            val playerImage = playerList?.get(position)?.strCutout
-            val playerName = playerList?.get(position)?.strPlayer
-            val playerPosition = playerList?.get(position)?.strPosition
-            val playerHeight = playerList?.get(position)?.strHeight
-            val playerWeight = playerList?.get(position)?.strWeight
-            val playerDOB = playerList?.get(position)?.dateBorn
-            val playerDescription = playerList?.get(position)?.strDescriptionEN
-            val playerNumber = playerList?.get(position)?.strNumber
-
-            // Load image into imageview
-            Glide.with(holder.view.context)
-                .load(playerImage)
-                .into(holder.view.findViewById(R.id.player_image))
-
             // Send data to next fragment
             val intent = Intent(holder.view.context, SearchResultsFragment::class.java)
             intent.putExtra("name", playerName)
