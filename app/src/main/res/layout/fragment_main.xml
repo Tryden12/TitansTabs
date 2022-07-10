@@ -15,48 +15,6 @@
         android:layout_height="match_parent">
 
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/back_btn"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="108dp"
-            android:layout_marginTop="66dp"
-            android:layout_marginEnd="108dp"
-            android:background="@drawable/button_bg_secondary"
-            android:fontFamily="@font/roboto_bold"
-            android:paddingLeft="30dp"
-            android:paddingRight="30dp"
-            android:text="Fill"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.478"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/myRecyclerView" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/view_popup_btn"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="132dp"
-            android:layout_marginTop="88dp"
-            android:layout_marginEnd="132dp"
-            android:layout_marginBottom="100dp"
-            android:background="@drawable/button_bg_secondary"
-            android:paddingRight="30dp"
-            android:paddingLeft="30dp"
-            android:fontFamily="@font/roboto_bold"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            android:textAllCaps="false"
-            android:text="Fill"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/back_btn" />
-
-
         <TextView
             android:id="@+id/textview_heading_search_player"
             android:layout_width="wrap_content"
@@ -64,7 +22,7 @@
             android:layout_marginStart="12dp"
             android:layout_marginTop="20dp"
             android:fontFamily="@font/roboto_bold"
-            android:text="Heading"
+            android:text="News"
             android:textAllCaps="true"
             android:textColor="@color/dark_blue"
             android:textSize="20sp"
@@ -162,9 +120,9 @@
             android:textColorHint="@color/baby_blue"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textview_heading_search_player" />
+            app:layout_constraintTop_toBottomOf="@+id/myRecyclerView" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/search_button"
@@ -189,15 +147,15 @@
             android:layout_width="0dp"
             android:layout_height="200dp"
             android:layout_marginStart="12dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="12dp"
             android:layout_marginEnd="12dp"
             android:background="@drawable/recycler_bg"
             android:elevation="10dp"
             android:padding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/search_button" />
+            app:layout_constraintTop_toBottomOf="@+id/textview_heading_search_player" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
