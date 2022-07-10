@@ -12,36 +12,22 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
-import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.tryden12.titanstabs.R
-import com.tryden12.titanstabs.data.model.Player
 import com.tryden12.titanstabs.databinding.FragmentMainBinding
 import com.tryden12.titanstabs.ui.main.adapter.Adapter
 import com.tryden12.titanstabs.ui.main.viewmodel.ViewModel
-import kotlinx.coroutines.*
-import org.json.JSONArray
-import org.json.JSONException
-import org.json.JSONObject
-import java.io.BufferedInputStream
-import java.io.BufferedReader
-import java.net.URL
-import java.net.URLConnection
+
 
 
 class MainFragment : Fragment(), View.OnClickListener {
 
-    companion object {
-        fun newInstance() = MainFragment()
-    }
-
     private lateinit var binding: FragmentMainBinding
 
     var navController : NavController? = null
-    private lateinit var viewModel: ViewModel
     private lateinit var adapter : Adapter
-    var playerModelArrayList: MutableList<Player>? = ArrayList()
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -53,46 +39,17 @@ class MainFragment : Fragment(), View.OnClickListener {
        return binding.root
     }
 
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-
-        // Disable back button
-        disableOnBackPressed()
-
-
-        viewModel = ViewModelProvider(this)[ViewModel::class.java]
-
-        //binding.textviewHeadingSearchPlayer.text = viewModel.fetchPlayer().strPlayer
-
-        viewModel.liveItemData.observe(viewLifecycleOwner) {
-            //binding.textViewTestingJson.text = it.strPlayer
-        }
-
-        initViewModel()
-        initRecyclerView()
-        //retrievePlayerDataTest()
-
-
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         navController = Navigation.findNavController(view)
+        initRecyclerView()
+        initViewModel()
+        disableOnBackPressed()
         view.findViewById<Button>(R.id.search_button).setOnClickListener(this)
     }
 
-    private fun disableOnBackPressed() {
-        val callback: OnBackPressedCallback =
-            object : OnBackPressedCallback(true /* enabled by default */) {
-                override fun handleOnBackPressed() {
-                    // Handle the back button even
-                    Log.d("BACKBUTTON", "Back button clicks")
-                }
-            }
-        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)
-    }
+
 
     private fun initRecyclerView() {
         binding.myRecyclerView.apply {
@@ -107,13 +64,10 @@ class MainFragment : Fragment(), View.OnClickListener {
 
     private fun initViewModel() {
         val viewModel: ViewModel = ViewModelProvider(this)[ViewModel::class.java]
-        /*
         viewModel.getLiveDataObserver().observe(viewLifecycleOwner, Observer {
-            // TODO
+            adapter.setPlayerList(it)
+            adapter.notifyDataSetChanged()
         })
-
-
-         */
         viewModel.makeApiCall()
     }
 
@@ -123,20 +77,16 @@ class MainFragment : Fragment(), View.OnClickListener {
         }
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    private fun disableOnBackPressed() {
+        val callback: OnBackPressedCallback =
+            object : OnBackPressedCallback(true /* enabled by default */) {
+                override fun handleOnBackPressed() {
+                    // Handle the back button even
+                    Log.d("BACKBUTTON", "Back button clicks")
+                }
+            }
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)
+    }
 
 /*
      fun retrievePlayerDataTest() {
