@@ -42,8 +42,9 @@ class MainFragment : Fragment(), View.OnClickListener {
         super.onViewCreated(view, savedInstanceState)
 
         navController = Navigation.findNavController(view)
-        initRecyclerView()
-        initViewModel()
+        //initRecyclerView()
+        //initViewModel()
+        initListeners()
         disableOnBackPressed()
         view.findViewById<Button>(R.id.search_button).setOnClickListener(this)
     }
@@ -66,20 +67,20 @@ class MainFragment : Fragment(), View.OnClickListener {
         val viewModel: ViewModel = ViewModelProvider(this)[ViewModel::class.java]
         viewModel.getLiveDataObserver().observe(requireActivity(), Observer {
 
-            // Set player list
-            if (it != null) {
-                playerAdapter.setPlayerList(it)
-                playerAdapter.notifyDataSetChanged()
-            } else {
-                Toast.makeText(context, "Error", Toast.LENGTH_SHORT).show()
-            }
+
         })
-        viewModel.makeApiCall()
+        //viewModel.makeApiCall()
+    }
+
+    private fun initListeners() {
+        binding.rosterIconImageView.setOnClickListener(this)
+        binding.rosterTextview.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
         when (v!!.id) {
-           // R.id.search_button -> navController!!.navigate((R.id.action_mainFragment_to_searchResultsFragment2))
+            R.id.roster_icon_imageView -> navController!!.navigate((R.id.action_mainFragment_to_rosterFragment))
+            R.id.roster_textview -> navController!!.navigate((R.id.action_mainFragment_to_rosterFragment))
         }
     }
 
@@ -93,80 +94,4 @@ class MainFragment : Fragment(), View.OnClickListener {
             }
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)
     }
-
-/*
-     fun retrievePlayerDataTest() {
-        try {
-            // Create coroutine for download job
-            val downloadJob = CoroutineScope(Dispatchers.IO).launch {
-
-                val url = URL("https://www.thesportsdb.com/api/v1/json/50130162/searchplayers.php?t=Tennessee%Titans")
-                val connection : URLConnection = url.openConnection()
-                connection.connect()
-
-                var jsonStr = ""
-                val bufferedInputStream = BufferedInputStream(connection.getInputStream())
-                val bufferedReader: BufferedReader = bufferedInputStream.bufferedReader()
-
-                val stringBuffer = StringBuffer()
-                for(line in bufferedReader.lines()) {
-                    stringBuffer.append(line)
-                }
-
-                bufferedReader.close()
-
-
-
-                val fullJson: String = stringBuffer.toString()
-
-                val jsonObjectPlayers = JSONObject(fullJson)
-                val jsonArray : JSONArray = jsonObjectPlayers.getJSONArray("player")
-                val jsonObjectPlayer : JSONObject = jsonArray.getJSONObject(0)
-
-                val playerName : String = jsonObjectPlayer.getString("strPlayer")
-                val playerPosition: String = jsonObjectPlayer.getString("strPosition")
-                val playerHeight : String = jsonObjectPlayer.getString("strHeight")
-                val playerWeight : String = jsonObjectPlayer.getString("strWeight")
-                val playerBorn : String = jsonObjectPlayer.getString("dateBorn")
-                val playerImage : String = jsonObjectPlayer.getString("strThumb")
-                val playerDesc : String = jsonObjectPlayer.getString("strDescriptionEN")
-
-                withContext(Dispatchers.Main) {
-
-                    for (i in 0 until jsonArray.length()) {
-                        val playerItemModel = Player()
-                        val jsonObjectItem     = jsonArray.getJSONObject(i)
-                        Log.i("DEBUG_JSON", "$jsonObjectItem")
-
-
-
-
-                        playerItemModel.strPlayer    = "" + playerName
-                        playerItemModel.strPosition = "" + playerPosition
-                        playerItemModel.strThumb    = "" + playerImage
-
-
-
-                        playerModelArrayList!!.add(playerItemModel)
-
-                    } // for
-                    /*
-                    if (playerModelArrayList != null) {
-                        adapter!!.dataChanged(playerModelArrayList!!)
-                    }
-
-                     */
-                }
-
-            }
-        } catch (e: JSONException) {
-            e.printStackTrace()
-        }
-    }
-
-
-
- */
-
-
 }
