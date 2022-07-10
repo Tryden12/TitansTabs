@@ -11,6 +11,7 @@ data class Player(
     val strHeight: String? = null,
     val strWeight: String? = null,
     val strCutout: String? = null,
+    val strThumb: String? = null,
 
     /*
     val dateBorn: String? = null,

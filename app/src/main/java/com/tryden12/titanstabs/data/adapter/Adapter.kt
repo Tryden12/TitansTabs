@@ -38,7 +38,7 @@ class Adapter : RecyclerView.Adapter<Adapter.ItemViewHolder>() {
         holder.bind(playerList?.get(position))
 
         // Get data for position
-        val playerImage = playerList?.get(position)?.strCutout
+        val playerImage = playerList?.get(position)?.strThumb
         val playerName = playerList?.get(position)?.strPlayer
         val playerPosition = playerList?.get(position)?.strPosition
         val playerHeight = playerList?.get(position)?.strHeight
