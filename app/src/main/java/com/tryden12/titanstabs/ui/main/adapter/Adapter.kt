@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.squareup.picasso.Picasso
 import com.tryden12.titanstabs.R
 import com.tryden12.titanstabs.data.model.Player
@@ -50,17 +51,29 @@ class Adapter : RecyclerView.Adapter<Adapter.ItemViewHolder>() {
 
         holder.view.findViewById<View>(R.id.item_linear_layout).setOnClickListener {
             // Get data for position
+            val playerImage = playerList?.get(position)?.strCutout
             val playerName = playerList?.get(position)?.strPlayer
             val playerPosition = playerList?.get(position)?.strPosition
-            //val playerNumber = playerList?.get(position)?.strNumber
-            //val playerImage = playerList?.get(position)?.strCutout
+            val playerHeight = playerList?.get(position)?.strHeight
+            val playerWeight = playerList?.get(position)?.strWeight
+            val playerDOB = playerList?.get(position)?.dateBorn
+            val playerDescription = playerList?.get(position)?.strDescriptionEN
+            val playerNumber = playerList?.get(position)?.strNumber
 
-           // Picasso.get().load(player.strCutout).into(holder.view.findViewById(R.id.player_image))
+            // Load image into imageview
+            Glide.with(holder.view.context)
+                .load(playerImage)
+                .into(holder.view.findViewById(R.id.player_image))
 
             // Send data to next fragment
             val intent = Intent(holder.view.context, SearchResultsFragment::class.java)
-            intent.putExtra("playerName", playerName)
-            intent.putExtra("playerPosition", playerPosition)
+            intent.putExtra("name", playerName)
+            intent.putExtra("position", playerPosition)
+            intent.putExtra("height", playerHeight)
+            intent.putExtra("weight", playerWeight)
+            intent.putExtra("dob", playerDOB)
+            intent.putExtra("desc", playerDescription)
+            intent.putExtra("number", playerNumber)
             holder.view.context.startActivity(intent)
         }
     }
@@ -74,17 +87,16 @@ class Adapter : RecyclerView.Adapter<Adapter.ItemViewHolder>() {
         // Create variables for items in item_player layout
         private val playerName: TextView = view.findViewById(R.id.player_name)
         private val playerPosition: TextView = view.findViewById(R.id.player_position)
-        //private val playerNumber: TextView = view.findViewById(R.id.player_number)
-        //private val playerImage: ImageView = view.findViewById(R.id.player_image)
+        private val playerNumber: TextView = view.findViewById(R.id.player_number)
+        private val playerImage: ImageView = view.findViewById(R.id.player_image)
 
         // Bind data to player variables
         fun bind(data: Player?) {
                 playerName.text = data!!.strPlayer
                 playerPosition.text = data!!.strPosition
-                //playerNumber.text = data.strNumber
-                //playerImage.setImageResource(R.id.player_image) = data.strCutout
-
+                playerNumber.text = data.strNumber
         }
+
 
     }
 }
