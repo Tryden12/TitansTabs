@@ -40,12 +40,12 @@
             android:background="@drawable/card_bg"
             android:elevation="10dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textview_player_heading" />
 
-
         <TextView
-            android:id="@+id/roster_textview"
+            android:id="@+id/playerName_textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -67,25 +67,26 @@
             android:elevation="12dp"
             android:fontFamily="@font/roboto_bold"
             android:text="@string/position"
-            android:textColor="@color/dark_blue"
+            android:textColor="@color/steel_grey"
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="@+id/view_player_details"
-            app:layout_constraintTop_toBottomOf="@+id/roster_textview" />
+            app:layout_constraintTop_toBottomOf="@+id/playerName_textview" />
 
 
         <TextView
-            android:id="@+id/textView_position_json"
+            android:id="@+id/textView_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:elevation="12dp"
-            android:fontFamily="@font/roboto_regular"
-            android:text=""
-            android:textColor="@color/dark_blue"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/number"
+            android:textColor="@color/steel_grey"
             android:textSize="14sp"
             app:layout_constraintStart_toEndOf="@+id/textView_position"
-            app:layout_constraintTop_toBottomOf="@+id/roster_textview" />
+            app:layout_constraintTop_toBottomOf="@+id/playerName_textview" />
+
 
         <TextView
             android:id="@+id/textView_height"
@@ -96,24 +97,10 @@
             android:elevation="12dp"
             android:fontFamily="@font/roboto_bold"
             android:text="@string/height"
-            android:textColor="@color/dark_blue"
+            android:textColor="@color/steel_grey"
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="@+id/view_player_details"
             app:layout_constraintTop_toBottomOf="@+id/textView_position" />
-
-        <TextView
-            android:id="@+id/textView_height_json"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:elevation="12dp"
-            android:fontFamily="@font/roboto_regular"
-            android:text=""
-            android:textColor="@color/dark_blue"
-            android:textSize="14sp"
-            app:layout_constraintStart_toEndOf="@+id/textView_height"
-            app:layout_constraintTop_toBottomOf="@+id/textView_position_json" />
 
         <TextView
             android:id="@+id/textView_weight"
@@ -124,53 +111,67 @@
             android:elevation="12dp"
             android:fontFamily="@font/roboto_bold"
             android:text="@string/weight"
-            android:textColor="@color/dark_blue"
+            android:textColor="@color/steel_grey"
             android:textSize="14sp"
-            app:layout_constraintStart_toStartOf="@+id/view_player_details"
-            app:layout_constraintTop_toBottomOf="@+id/textView_height" />
+            app:layout_constraintStart_toEndOf="@+id/textView_height"
+            app:layout_constraintTop_toBottomOf="@+id/textView_number" />
 
         <TextView
-            android:id="@+id/textView_weight_json"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:elevation="12dp"
-            android:fontFamily="@font/roboto_regular"
-            android:text=""
-            android:textColor="@color/dark_blue"
-            android:textSize="14sp"
-            app:layout_constraintStart_toEndOf="@+id/textView_weight"
-            app:layout_constraintTop_toBottomOf="@+id/textView_height_json" />
-
-        <TextView
-            android:id="@+id/textView_born"
+            android:id="@+id/textView_age"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:elevation="12dp"
             android:fontFamily="@font/roboto_bold"
-            android:text="@string/born"
-            android:textColor="@color/dark_blue"
+            android:text="@string/age"
+            android:textColor="@color/steel_grey"
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="@+id/view_player_details"
-            app:layout_constraintTop_toBottomOf="@+id/textView_weight" />
+            app:layout_constraintTop_toBottomOf="@+id/textView_height" />
 
         <TextView
-            android:id="@+id/textView_born_json"
+            android:id="@+id/textView_college"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:elevation="12dp"
-            android:fontFamily="@font/roboto_regular"
-            android:text=""
-            android:textColor="@color/dark_blue"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/college"
+            android:textColor="@color/steel_grey"
             android:textSize="14sp"
-            app:layout_constraintStart_toEndOf="@+id/textView_born"
-            app:layout_constraintTop_toBottomOf="@+id/textView_weight" />
+            app:layout_constraintStart_toStartOf="@+id/view_player_details"
+            app:layout_constraintTop_toBottomOf="@+id/textView_age"
+            tools:layout_editor_absoluteX="64dp" />
 
+        <TextView
+            android:id="@+id/textView_experience_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:elevation="12dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/experience"
+            android:textColor="@color/steel_grey"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@+id/view_player_details"
+            app:layout_constraintTop_toBottomOf="@+id/textView_college" />
+
+        <TextView
+            android:id="@+id/textView_experience"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:elevation="12dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/experience"
+            android:textColor="@color/steel_grey"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/textView_experience_label"
+            app:layout_constraintTop_toBottomOf="@+id/textView_college" />
 
         <ImageView
             android:id="@+id/imageview_player"
@@ -214,7 +215,7 @@
             app:layout_constraintTop_toTopOf="@+id/view_player_description" />
 
         <TextView
-            android:id="@+id/textView_description_json"
+            android:id="@+id/textView_bio"
             android:layout_width="365dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -222,7 +223,7 @@
             android:elevation="12dp"
             android:fontFamily="@font/roboto_regular"
             android:text=""
-            android:textColor="@color/dark_blue"
+            android:textColor="@color/steel_grey"
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="@+id/view_player_description"
             app:layout_constraintTop_toBottomOf="@+id/textView_description" />
