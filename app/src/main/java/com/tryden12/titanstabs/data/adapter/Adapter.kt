@@ -90,15 +90,18 @@ class Adapter : RecyclerView.Adapter<Adapter.ItemViewHolder>() {
     inner class ItemViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
 
         // Create variables for items in item_player layout
+        private val playerImage: ImageView = view.findViewById(R.id.player_image)
         private val playerName: TextView = view.findViewById(R.id.player_name)
+        private val playerCollege: TextView = view.findViewById(R.id.player_college)
         private val playerPosition: TextView = view.findViewById(R.id.player_position)
         private val playerNumber: TextView = view.findViewById(R.id.player_number)
-        private val playerImage: ImageView = view.findViewById(R.id.player_image)
+
 
         // Bind data to player variables
         fun bind(data : Player?) {
             if (data != null) {
                 playerName.text = data.strPlayer
+                playerCollege.text = data.strCollege
                 playerPosition.text = data.strPosition
                 playerNumber.text = data.strNumber
             }
