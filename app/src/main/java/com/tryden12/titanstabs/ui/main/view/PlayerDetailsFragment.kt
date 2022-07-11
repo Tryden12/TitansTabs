@@ -1,20 +1,19 @@
 package com.tryden12.titanstabs.ui.main.view
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
+import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.squareup.picasso.Picasso
 import com.tryden12.titanstabs.R
 import com.tryden12.titanstabs.databinding.PlayerDetailsFragmentBinding
-import com.tryden12.titanstabs.ui.main.viewmodel.ViewModel
 import kotlinx.android.synthetic.main.player_details_fragment.*
 
-class PlayerDetailsFragment : Fragment() {
+class PlayerDetailsFragment : Fragment(), View.OnClickListener {
 
     private lateinit var binding: PlayerDetailsFragmentBinding
     var navController: NavController? = null
@@ -46,9 +45,11 @@ class PlayerDetailsFragment : Fragment() {
 
         navController = Navigation.findNavController(view)
         buildPlayer()
+        initListeners()
+        //overrideOnBackPressed()
     }
 
-    fun buildPlayer() {
+    private fun buildPlayer() {
 
         // Get data from roster fragment to build player data
         adapterPosition = arguments?.getInt("position")
@@ -77,5 +78,24 @@ class PlayerDetailsFragment : Fragment() {
         Picasso.get().load(playerImage).into(binding.imageviewPlayer)
 
     }
+
+    private fun overrideOnBackPressed() {
+        activity?.onBackPressedDispatcher?.addCallback(viewLifecycleOwner, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                navController!!.navigate((R.id.action_playerDetailsFragment_to_rosterFragment))
+            }
+        })
+    }
+
+    private fun initListeners() {
+        binding.backBtn.setOnClickListener {
+            navController!!.navigate(R.id.action_playerDetailsFragment_to_rosterFragment)
+        }
+    }
+
+    override fun onClick(view: View?) {
+
+    }
+
 
 }
