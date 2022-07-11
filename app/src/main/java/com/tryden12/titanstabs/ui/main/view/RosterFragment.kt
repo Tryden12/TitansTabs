@@ -83,18 +83,20 @@ class RosterFragment : Fragment(), FragmentCommunicator {
         playerCollege: String,
         playerBio: String
     ) {
-        val bundle = Bundle()
-        bundle.putInt("adapterPosition", position)
-        bundle.putString("playerName", playerName)
-        bundle.putString("playerPosition", playerPosition)
-        bundle.putString("playerNumber", playerNumber)
-        bundle.putString("playerHeight", playerHeight)
-        bundle.putString("playerWeight", playerWeight)
-        bundle.putString("playerAge", playerAge)
-        bundle.putString("playerImage", playerImage)
-        bundle.putString("playerExperience", playerExperience)
-        bundle.putString("playerCollege", playerCollege)
-        bundle.putString("playerBio", playerBio)
+
+        val bundle = Bundle().apply {
+            putInt("adapterPosition", position)
+            putString("playerName", playerName)
+            putString("playerPosition", playerPosition)
+            putString("playerNumber", playerNumber)
+            putString("playerHeight", playerHeight)
+            putString("playerWeight", playerWeight)
+            putString("playerAge", playerAge)
+            putString("playerImage", playerImage)
+            putString("playerExperience", playerExperience)
+            putString("playerCollege", playerCollege)
+            putString("playerBio", playerBio)
+        }
 
         val transaction = this.parentFragmentManager.beginTransaction()
         val playerDetailFrag = PlayerDetailsFragment()
@@ -103,6 +105,18 @@ class RosterFragment : Fragment(), FragmentCommunicator {
         transaction.replace(R.id.frame_layout,playerDetailFrag)
         transaction.addToBackStack(null)
         transaction.commit()
+        //navController!!.navigate(R.id.action_rosterFragment_to_playerDetailsFragment)
+
+/*
+
+
+        val playerDetailFrag = PlayerDetailsFragment()
+        playerDetailFrag.arguments = bundle
+        navController!!.navigate(R.id.action_rosterFragment_to_playerDetailsFragment)
+
+
+         */
+
     }
 
 
