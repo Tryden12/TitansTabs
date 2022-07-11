@@ -30,13 +30,16 @@ class LoginActivity : AppCompatActivity() {
         setListeners()
     }
 
-    fun initViews() {
+    private fun initViews() {
         // Transform password to dots
         binding.editTextPassword.transformationMethod = PasswordTransformationMethod()
     }
 
-    fun setListeners() {
-        binding.buttonLogin.setOnClickListener{ toMainActivity() }
+    private fun setListeners() {
+        binding.buttonLogin.setOnClickListener{
+            //toMainActivity()
+            checkUserCredentials()
+        }
         binding.buttonSignUp.setOnClickListener {
             val intent = Intent(this, CreateUserActivity::class.java)
             startActivity(intent)
@@ -48,7 +51,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     /*** Method for Testing **/
-    fun toMainActivity() {
+    private fun toMainActivity() {
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
     }
