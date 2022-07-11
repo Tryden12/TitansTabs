@@ -41,9 +41,11 @@
     <!-- Main Fragment -->
     <string name="roster">Roster</string>
     <string name="news">News</string>
-
-
-    <!-- Main Fragment -->
+    <string name="schedule">Schedule</string>
+    <string name="depth_chart">Depth Chart</string>
+    <string name="depth">Depth</string>
+    <string name="chart">Chart</string>
+    <string name="stats">Stats</string>
     <string name="college">College</string>
 
 
