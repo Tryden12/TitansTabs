@@ -1,4 +1,4 @@
-package com.tryden12.titanstabs.ui.main.view
+package com.tryden12.titanstabs.ui.main.view.activities
 
 import android.content.Intent
 import android.graphics.Color

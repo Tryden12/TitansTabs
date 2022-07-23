@@ -1,4 +1,4 @@
-package com.tryden12.titanstabs.ui.main.view
+package com.tryden12.titanstabs.ui.main.view.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,7 +11,6 @@ import androidx.navigation.Navigation
 import com.squareup.picasso.Picasso
 import com.tryden12.titanstabs.R
 import com.tryden12.titanstabs.databinding.PlayerDetailsFragmentBinding
-import kotlinx.android.synthetic.main.player_details_fragment.*
 
 class PlayerDetailsFragment : Fragment(), View.OnClickListener {
 

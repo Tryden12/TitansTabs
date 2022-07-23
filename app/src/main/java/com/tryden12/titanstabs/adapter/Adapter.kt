@@ -1,6 +1,5 @@
 package com.tryden12.titanstabs.adapter
 
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,8 +10,6 @@ import com.bumptech.glide.Glide
 import com.tryden12.titanstabs.R
 import com.tryden12.titanstabs.data.model.Player
 import com.tryden12.titanstabs.interfaces.FragmentCommunicator
-import com.tryden12.titanstabs.ui.main.view.PlayerDetailsFragment
-import com.tryden12.titanstabs.ui.main.view.RosterFragment
 
 class Adapter(val listener: FragmentCommunicator) : RecyclerView.Adapter<Adapter.ItemViewHolder>() {
 
