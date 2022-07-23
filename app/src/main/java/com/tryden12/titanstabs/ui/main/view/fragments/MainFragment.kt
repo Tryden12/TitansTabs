@@ -1,4 +1,4 @@
-package com.tryden12.titanstabs.ui.main.view
+package com.tryden12.titanstabs.ui.main.view.fragments
 
 import android.os.Bundle
 import android.util.Log
@@ -46,22 +46,6 @@ class MainFragment : Fragment(), View.OnClickListener {
         view.findViewById<Button>(R.id.search_button).setOnClickListener(this)
     }
 
-
-/*
-    private fun initRecyclerView() {
-        binding.myRecyclerView.apply {
-            layoutManager = LinearLayoutManager(context,LinearLayoutManager.VERTICAL, false)
-            playerAdapter = Adapter(this@MainFragment)
-            adapter = playerAdapter
-            val divider = DividerItemDecoration(
-                context, (layoutManager as LinearLayoutManager).orientation
-            )
-            addItemDecoration(divider)
-        }
-    }
-
- */
-
     private fun initViewModel() {
         val viewModel: ViewModel = ViewModelProvider(this)[ViewModel::class.java]
         viewModel.getLiveDataObserver().observe(requireActivity(), Observer {
@@ -74,12 +58,17 @@ class MainFragment : Fragment(), View.OnClickListener {
     private fun initListeners() {
         binding.rosterIconImageView.setOnClickListener(this)
         binding.rosterTextview.setOnClickListener(this)
+        binding.scheduleIconImageView.setOnClickListener(this)
+        binding.scheduleTextview.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
         when (v!!.id) {
+            // To roster fragment
             R.id.roster_icon_imageView -> navController!!.navigate((R.id.action_mainFragment_to_rosterFragment))
             R.id.roster_textview -> navController!!.navigate((R.id.action_mainFragment_to_rosterFragment))
+            R.id.schedule_icon_imageView -> navController!!.navigate(R.id.action_mainFragment_to_scheduleFragment)
+            R.id.schedule_textview -> navController!!.navigate(R.id.action_mainFragment_to_scheduleFragment)
         }
     }
 
