@@ -47,6 +47,10 @@
     <string name="chart">Chart</string>
     <string name="stats">Stats</string>
     <string name="photos">Photos</string>
+    <string name="podcasts">Podcasts</string>
+    <string name="roster_moves">Roster Moves</string>
+    <string name="shop">Shop</string>
+    <string name="edit">Edit</string>
     <string name="college">College</string>
 
 
