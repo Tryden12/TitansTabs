@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/grey"
     android:id="@+id/frame_layout"
-    tools:context=".ui.main.view.PlayerDetailsFragment">
+    tools:context=".ui.main.view.fragments.PlayerDetailsFragment">
 
     <LinearLayout
         android:layout_width="match_parent"

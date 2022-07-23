@@ -13,19 +13,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TitansTabs" >
         <activity
-            android:name=".ui.main.view.MainActivity"
+            android:name=".ui.main.view.activities.MainActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.main.view.LoginActivity"
+            android:name=".ui.main.view.activities.LoginActivity"
             android:exported="true"
             android:theme="@style/LoginCreate"/>
         <activity
-            android:name=".ui.main.view.CreateUserActivity"
+            android:name=".ui.main.view.activities.CreateUserActivity"
             android:exported="true"
             android:theme="@style/LoginCreate"/>
 
         <activity
-            android:name=".ui.main.view.SplashScreen"
+            android:name=".ui.main.view.splashscreen.SplashScreen"
             android:exported="true"
             android:theme="@style/SplashScreen">
             <intent-filter>
