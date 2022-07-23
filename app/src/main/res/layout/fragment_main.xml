@@ -55,8 +55,8 @@
                         android:elevation="12dp"
                         android:text="@string/roster"
                         android:fontFamily="@font/roboto_bold"
-                        android:textColor="@color/dark_blue"
-                        android:textSize="@dimen/_10sdp"/>
+                        android:textColor="@color/steel_grey"
+                        android:textSize="@dimen/_8sdp"/>
 
                 </LinearLayout>
                 <LinearLayout
@@ -82,8 +82,8 @@
                         android:elevation="12dp"
                         android:text="@string/schedule"
                         android:fontFamily="@font/roboto_bold"
-                        android:textColor="@color/dark_blue"
-                        android:textSize="@dimen/_10sdp"/>
+                        android:textColor="@color/steel_grey"
+                        android:textSize="@dimen/_8sdp"/>
 
                 </LinearLayout>
 
@@ -111,8 +111,8 @@
                         android:elevation="12dp"
                         android:text="@string/depth"
                         android:fontFamily="@font/roboto_bold"
-                        android:textColor="@color/dark_blue"
-                        android:textSize="@dimen/_10sdp"/>
+                        android:textColor="@color/steel_grey"
+                        android:textSize="@dimen/_8sdp"/>
                     <TextView
                         android:id="@+id/chart_textview"
                         android:layout_width="wrap_content"
@@ -120,8 +120,8 @@
                         android:elevation="12dp"
                         android:text="@string/chart"
                         android:fontFamily="@font/roboto_bold"
-                        android:textColor="@color/dark_blue"
-                        android:textSize="@dimen/_10sdp"/>
+                        android:textColor="@color/steel_grey"
+                        android:textSize="@dimen/_8sdp"/>
 
                 </LinearLayout>
 
@@ -148,8 +148,8 @@
                         android:elevation="12dp"
                         android:text="@string/stats"
                         android:fontFamily="@font/roboto_bold"
-                        android:textColor="@color/dark_blue"
-                        android:textSize="@dimen/_10sdp"/>
+                        android:textColor="@color/steel_grey"
+                        android:textSize="@dimen/_8sdp"/>
 
                 </LinearLayout>
 
@@ -176,8 +176,8 @@
                         android:elevation="12dp"
                         android:text="@string/photos"
                         android:fontFamily="@font/roboto_bold"
-                        android:textColor="@color/dark_blue"
-                        android:textSize="@dimen/_10sdp"/>
+                        android:textColor="@color/steel_grey"
+                        android:textSize="@dimen/_8sdp"/>
 
                 </LinearLayout>
 
@@ -196,7 +196,7 @@
             android:text="@string/news"
             android:textAllCaps="true"
             android:textColor="@color/dark_blue"
-            android:textSize="@dimen/_20sdp" />
+            android:textSize="@dimen/_16sdp" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/myRecyclerView"
