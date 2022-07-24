@@ -24,7 +24,6 @@ class MainFragment : Fragment(), View.OnClickListener {
     private lateinit var binding: FragmentMainBinding
 
     var navController : NavController? = null
-    private lateinit var playerAdapter : Adapter
 
 
     override fun onCreateView(
@@ -60,6 +59,9 @@ class MainFragment : Fragment(), View.OnClickListener {
         binding.rosterTextview.setOnClickListener(this)
         binding.scheduleIconImageView.setOnClickListener(this)
         binding.scheduleTextview.setOnClickListener(this)
+
+        binding.editIconImageView.setOnClickListener(this)
+        binding.editIconTextview.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -69,6 +71,25 @@ class MainFragment : Fragment(), View.OnClickListener {
             R.id.roster_textview -> navController!!.navigate((R.id.action_mainFragment_to_rosterFragment))
             R.id.schedule_icon_imageView -> navController!!.navigate(R.id.action_mainFragment_to_scheduleFragment)
             R.id.schedule_textview -> navController!!.navigate(R.id.action_mainFragment_to_scheduleFragment)
+
+
+            // Edit button in dashboard
+            R.id.edit_icon_imageView -> {
+                var dialog = Top5PopUpFragment()
+
+                dialog.show(childFragmentManager, "customDialog")
+            }
+            R.id.edit_icon_textview -> {
+                var dialog = Top5PopUpFragment()
+                /*
+                Bundle().apply {
+                    putInt(KEY, imageDrawable)
+                }
+
+                 */
+
+                dialog.show(childFragmentManager, "customDialog")
+            }
         }
     }
 
