@@ -33,10 +33,12 @@
                 android:orientation="horizontal">
 
                 <LinearLayout
+                    android:id="@+id/roster_dash_layout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_8sdp"
                     android:layout_marginEnd="@dimen/_8sdp"
+                    android:visibility="visible"
                     android:gravity="center_horizontal|center_vertical"
                     android:orientation="vertical">
 
@@ -60,12 +62,14 @@
 
                 </LinearLayout>
                 <LinearLayout
+                    android:id="@+id/schedule_dash_layout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_8sdp"
                     android:layout_marginEnd="@dimen/_8sdp"
                     android:gravity="center_horizontal|center_vertical"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:visibility="visible">
 
                     <ImageView
                         android:id="@+id/schedule_icon_imageView"
@@ -88,12 +92,14 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/depth_chart_dash_layout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_2sdp"
                     android:layout_marginEnd="@dimen/_2sdp"
                     android:gravity="center_horizontal|center_vertical"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:visibility="visible">
 
                     <ImageView
                         android:id="@+id/depth_chart_icon_imageView"
@@ -117,12 +123,14 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/stats_dash_layout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_8sdp"
                     android:layout_marginEnd="@dimen/_8sdp"
                     android:gravity="center_horizontal|center_vertical"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:visibility="visible">
 
                     <ImageView
                         android:id="@+id/stats_icon_imageView"
@@ -145,12 +153,74 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/shop_dash_layout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_8sdp"
                     android:layout_marginEnd="@dimen/_8sdp"
                     android:gravity="center_horizontal|center_vertical"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/shop_icon_imageView"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:scaleType="centerCrop"
+                        android:elevation="20dp"
+                        app:srcCompat="@drawable/icon_shop" />
+
+                    <TextView
+                        android:id="@+id/shop_textview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:elevation="12dp"
+                        android:text="@string/shop"
+                        android:fontFamily="@font/roboto_bold"
+                        android:textColor="@color/steel_grey"
+                        android:textSize="@dimen/_8sdp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/roster_moves_dash_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/roster_moves_icon_imageView"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:scaleType="centerCrop"
+                        android:elevation="20dp"
+                        app:srcCompat="@drawable/icon_roster_moves" />
+
+                    <TextView
+                        android:id="@+id/roster_moves_textview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:elevation="12dp"
+                        android:text="@string/roster_moves"
+                        android:fontFamily="@font/roboto_bold"
+                        android:textColor="@color/steel_grey"
+                        android:textSize="@dimen/_8sdp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/photos_dash_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:orientation="vertical"
+                    android:visibility="visible">
 
                     <ImageView
                         android:id="@+id/photos_icon_imageView"
@@ -166,6 +236,36 @@
                         android:layout_height="wrap_content"
                         android:elevation="12dp"
                         android:text="@string/photos"
+                        android:fontFamily="@font/roboto_bold"
+                        android:textColor="@color/steel_grey"
+                        android:textSize="@dimen/_8sdp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/podcast_dash_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/podcast_icon_imageView"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:scaleType="centerCrop"
+                        android:elevation="20dp"
+                        app:srcCompat="@drawable/icon_podcasts" />
+
+                    <TextView
+                        android:id="@+id/podcast_textview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:elevation="12dp"
+                        android:text="@string/podcasts"
                         android:fontFamily="@font/roboto_bold"
                         android:textColor="@color/steel_grey"
                         android:textSize="@dimen/_8sdp"/>
