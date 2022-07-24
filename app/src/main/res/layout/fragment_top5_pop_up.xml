@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/custom_dialog_bg_top_5"
+    tools:context=".ui.main.view.fragments.Top5PopUpFragment"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/custom_dialog_bg_top_5"
-    tools:context=".ui.main.view.fragments.Top5PopUpFragment">
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center_horizontal|center_vertical"
-        android:padding="@dimen/_12sdp">
+    android:paddingTop="@dimen/_10sdp"
+    android:paddingBottom="@dimen/_10sdp"
+    android:gravity="center_horizontal|center_vertical">
 
 
         <TextView
@@ -24,15 +21,14 @@
             android:textColor="@color/black"
             android:textSize="@dimen/_12sdp"
             android:layout_gravity="center"
-            android:layout_marginTop="@dimen/_4sdp"
-            android:layout_marginBottom="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
             />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="@dimen/_5sdp"
-            android:layout_marginTop="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_15sdp"
             android:orientation="horizontal">
 
             <RadioGroup
@@ -43,15 +39,14 @@
                 android:orientation="horizontal">
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="@dimen/_69sdp"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/_10sdp"
                     android:orientation="vertical">
 
                     <RadioButton
                         android:id="@+id/radio_button_roster_pick"
-                        android:layout_width="@dimen/_50sdp"
-                        android:layout_height="@dimen/_50sdp"
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_40sdp"
                         android:background="@drawable/icon_helmet"
                         android:layout_gravity="center"
                         android:button="@android:color/transparent"/>
@@ -60,17 +55,17 @@
                         android:id="@+id/roster_pick_textview"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:elevation="12dp"
-                        android:text="@string/roster"
                         android:layout_gravity="center"
+                        android:elevation="12dp"
                         android:fontFamily="@font/roboto_bold"
+                        android:text="@string/roster"
                         android:textColor="@color/steel_grey"
-                        android:textSize="@dimen/_12sdp"/>
+                        android:textSize="@dimen/_10sdp" />
 
                     <RadioButton
                         android:id="@+id/radio_button_stats_pick"
-                        android:layout_width="@dimen/_50sdp"
-                        android:layout_height="@dimen/_50sdp"
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_40sdp"
                         android:background="@drawable/icon_stats"
                         android:layout_gravity="center"
                         android:layout_marginTop="@dimen/_25sdp"
@@ -87,20 +82,19 @@
                         android:layout_gravity="center"
                         android:fontFamily="@font/roboto_bold"
                         android:textColor="@color/steel_grey"
-                        android:textSize="@dimen/_12sdp"/>
+                        android:textSize="@dimen/_10sdp"/>
 
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="@dimen/_69sdp"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/_10sdp"
                     android:orientation="vertical">
 
                     <RadioButton
                         android:id="@+id/radio_button_schedule_pick"
-                        android:layout_width="@dimen/_50sdp"
-                        android:layout_height="@dimen/_50sdp"
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_40sdp"
                         android:background="@drawable/icon_schedule"
                         android:layout_gravity="center"
                         android:button="@android:color/transparent"/>
@@ -114,42 +108,40 @@
                         android:layout_gravity="center"
                         android:fontFamily="@font/roboto_bold"
                         android:textColor="@color/steel_grey"
-                        android:textSize="@dimen/_12sdp"/>
+                        android:textSize="@dimen/_10sdp"/>
 
                     <RadioButton
                         android:id="@+id/radio_button_roster_moves_pick"
-                        android:layout_width="@dimen/_50sdp"
-                        android:layout_height="@dimen/_50sdp"
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_40sdp"
                         android:background="@drawable/icon_roster_moves"
                         android:layout_gravity="center"
                         android:layout_marginTop="@dimen/_25sdp"
                         android:button="@android:color/transparent"/>
 
 
-
                     <TextView
                         android:id="@+id/roster_moves_pick_textview"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:elevation="12dp"
-                        android:text="@string/roster_moves"
                         android:layout_gravity="center"
+                        android:elevation="12dp"
                         android:fontFamily="@font/roboto_bold"
+                        android:text="@string/roster_moves"
                         android:textColor="@color/steel_grey"
-                        android:textSize="@dimen/_12sdp"/>
+                        android:textSize="@dimen/_10sdp" />
 
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="@dimen/_69sdp"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/_10sdp"
                     android:orientation="vertical">
 
                     <RadioButton
-                        android:id="@+id/radio_button_depth_chart_pick"
-                        android:layout_width="@dimen/_50sdp"
-                        android:layout_height="@dimen/_50sdp"
+                        android:id="@+id/radio_button_depth_chart"
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_40sdp"
                         android:background="@drawable/icon_depth_chart"
                         android:layout_gravity="center"
                         android:button="@android:color/transparent"/>
@@ -163,12 +155,12 @@
                         android:layout_gravity="center"
                         android:fontFamily="@font/roboto_bold"
                         android:textColor="@color/steel_grey"
-                        android:textSize="@dimen/_12sdp"/>
+                        android:textSize="@dimen/_10sdp"/>
 
                     <RadioButton
                         android:id="@+id/radio_button_shop_pick"
-                        android:layout_width="@dimen/_50sdp"
-                        android:layout_height="@dimen/_50sdp"
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_40sdp"
                         android:background="@drawable/icon_shop"
                         android:layout_gravity="center"
                         android:layout_marginTop="@dimen/_25sdp"
@@ -185,19 +177,19 @@
                         android:layout_gravity="center"
                         android:fontFamily="@font/roboto_bold"
                         android:textColor="@color/steel_grey"
-                        android:textSize="@dimen/_12sdp"/>
+                        android:textSize="@dimen/_10sdp"/>
 
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="@dimen/_69sdp"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
                     <RadioButton
                         android:id="@+id/radio_button_photos_pick"
-                        android:layout_width="@dimen/_50sdp"
-                        android:layout_height="@dimen/_50sdp"
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_40sdp"
                         android:background="@drawable/icon_photos"
                         android:layout_gravity="center"
                         android:button="@android:color/transparent"/>
@@ -211,12 +203,12 @@
                         android:layout_gravity="center"
                         android:fontFamily="@font/roboto_bold"
                         android:textColor="@color/steel_grey"
-                        android:textSize="@dimen/_12sdp"/>
+                        android:textSize="@dimen/_10sdp"/>
 
                     <RadioButton
                         android:id="@+id/radio_button_podcast_pick"
-                        android:layout_width="@dimen/_50sdp"
-                        android:layout_height="@dimen/_50sdp"
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_40sdp"
                         android:background="@drawable/icon_podcasts"
                         android:layout_gravity="center"
                         android:layout_marginTop="@dimen/_25sdp"
@@ -233,7 +225,7 @@
                         android:layout_gravity="center"
                         android:fontFamily="@font/roboto_bold"
                         android:textColor="@color/steel_grey"
-                        android:textSize="@dimen/_12sdp"/>
+                        android:textSize="@dimen/_10sdp"/>
 
                 </LinearLayout>
 
@@ -245,29 +237,32 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="@dimen/_5sdp"
-            android:layout_marginTop="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:padding="@dimen/_10sdp"
             android:orientation="horizontal">
 
             <androidx.appcompat.widget.AppCompatButton
-                android:layout_width="@dimen/_125sdp"
+                android:id="@+id/reset_to_default_button"
+                android:layout_width="@dimen/_110sdp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
                 android:padding="@dimen/_2sdp"
                 android:background="@drawable/button_bg_white"
                 android:text="@string/reset_to_default"
-                android:textSize="@dimen/_12sdp"
+                android:textSize="@dimen/_11sdp"
                 android:textColor="@color/wolf_grey"
                 android:fontFamily="@font/roboto_bold"
                 android:textAllCaps="true"/>
 
             <androidx.appcompat.widget.AppCompatButton
-                android:layout_width="@dimen/_125sdp"
+                android:id="@+id/accept_button"
+                android:layout_width="@dimen/_110sdp"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/_8sdp"
+                android:padding="@dimen/_2sdp"
                 android:background="@drawable/button_bg_main"
                 android:text="@string/accept"
-                android:textSize="@dimen/_12sdp"
+                android:textSize="@dimen/_11sdp"
                 android:textColor="@color/white"
                 android:fontFamily="@font/roboto_bold"
                 android:textAllCaps="true"/>
@@ -277,4 +272,3 @@
 
     </LinearLayout>
 
-</FrameLayout>
