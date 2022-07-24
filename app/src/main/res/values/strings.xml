@@ -53,6 +53,11 @@
     <string name="edit">Edit</string>
     <string name="college">College</string>
 
+    <!-- Choose Top 5 Dialog -->
+    <string name="choose_top_five">Choose Your Top 5</string>
+    <string name="reset_to_default">Reset To Default</string>
+    <string name="accept">Accept</string>
+
 
     <!-- Player Details Fragment -->
     <string name="player">PLAYER</string>
