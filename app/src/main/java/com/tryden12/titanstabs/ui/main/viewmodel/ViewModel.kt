@@ -46,20 +46,6 @@ class ViewModel : ViewModel() {
         })
     }
 
-/*
-    fun fetchPlayer() : Player {
-        return dataRepository.getPlayers().player[0]
-
-        viewModelScope.launch {
-            val player : Player = withContext(Dispatchers.IO) {
-                dataRepository.getPlayers().player[0]
-            }
-            playerLiveData.value = player
-        }
-
-
-    }
-*/
 
 
 
