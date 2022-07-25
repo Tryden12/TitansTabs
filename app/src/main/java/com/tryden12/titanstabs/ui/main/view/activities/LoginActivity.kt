@@ -37,8 +37,8 @@ class LoginActivity : AppCompatActivity() {
 
     private fun setListeners() {
         binding.buttonLogin.setOnClickListener{
-            //toMainActivity()
-            checkUserCredentials()
+            toMainActivity()
+            //checkUserCredentials()
         }
         binding.buttonSignUp.setOnClickListener {
             val intent = Intent(this, CreateUserActivity::class.java)
